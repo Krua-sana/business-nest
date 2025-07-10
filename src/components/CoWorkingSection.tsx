@@ -69,20 +69,20 @@ const CoWorkingSection = () => {
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           <div className="md:col-span-2">
             <img 
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=500&fit=crop"
-              alt="Co-working space"
+              src="/lovable-uploads/5302e45b-1982-477b-9632-bf35dd997796.png"
+              alt="Co-working space atmosphere"
               className="w-full h-80 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             />
           </div>
           <div className="space-y-6">
             <img 
-              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=180&fit=crop"
-              alt="Meeting room"
+              src="/lovable-uploads/b1b5869c-0fa2-4bea-81ee-a0707ac5e33b.png"
+              alt="Networking and collaboration"
               className="w-full h-36 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             />
             <img 
-              src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=400&h=180&fit=crop"
-              alt="Collaboration area"
+              src="/lovable-uploads/345d1852-a0eb-4e0e-a530-0e3a4a1e7c27.png"
+              alt="Team meeting space"
               className="w-full h-36 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             />
           </div>

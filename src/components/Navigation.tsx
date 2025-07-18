@@ -39,6 +39,7 @@ const Navigation = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+                <img src="/lovable-uploads/nest_logo.svg" alt="The Business Nest logo"></img>
                 <span className="text-white font-bold text-lg">🥚</span>
               </div>
               <span className="text-2xl font-bold text-gray-800">Business Nest</span>

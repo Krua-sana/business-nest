@@ -45,7 +45,7 @@ const ProgramSection = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Our <span className="text-orange-600">Incubation Program</span>
+              10 <span className="text-orange-600">Saturdays</span>Program
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From idea to launch, we provide everything you need to build a successful business. 
@@ -122,7 +122,7 @@ const ProgramSection = () => {
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg hover:scale-105 transition-transform"
               onClick={() => setIsFormOpen(true)}
             >
-              Join Our Program
+              Read about the Program
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

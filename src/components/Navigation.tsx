@@ -38,15 +38,21 @@ const Navigation = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'black' }}>
                 <img src="/lovable-uploads/nest_logo.svg" alt="The Business Nest logo"></img>
-                <span className="text-white font-bold text-lg">🥚</span>
+                {/* <span className="text-white font-bold text-lg">🥚</span> */}
               </div>
               <span className="text-2xl font-bold text-gray-800">Business Nest</span>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
+              <button 
+                onClick={() => scrollToSection('journey')}
+                className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+              >
+                Journey
+              </button>
               <button 
                 onClick={() => scrollToSection('program')}
                 className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
@@ -72,7 +78,7 @@ const Navigation = () => {
                 About
               </button>
               <Button 
-                className="bg-orange-500 hover:bg-orange-600 text-white"
+                className="bg-orange-500 hover:bg-black-600 text-white" 
                 onClick={handleJoinClick}
               >
                 Join The Nest

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
+import JourneySection from '@/components/JourneySection';
 import ProgramSection from '@/components/ProgramSection';
 import ExpertsSection from '@/components/ExpertsSection';
 import CoWorkingSection from '@/components/CoWorkingSection';
@@ -16,6 +17,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-amber-50">
       <Navigation />
       <Hero />
+      <JourneySection />
       <ProgramSection />
       <ExpertsSection />
       <CoWorkingSection />

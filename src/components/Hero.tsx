@@ -32,10 +32,10 @@ const Hero = () => {
           className="absolute inset-0 opacity-20"
           style={{ transform: `translateY(${scrollY * 0.3}px)` }}
         >
-          <div className="absolute top-20 left-10 text-8xl animate-float text-white">🐣</div>
+          {/* <div className="absolute top-20 left-10 text-8xl animate-float text-white">🐣</div>
           <div className="absolute top-40 right-20 text-6xl animate-float-delayed text-white">🥚</div>
           <div className="absolute bottom-40 left-20 text-7xl animate-float text-white">🪺</div>
-          <div className="absolute bottom-20 right-10 text-5xl animate-float-delayed text-white">🐦</div>
+          <div className="absolute bottom-20 right-10 text-5xl animate-float-delayed text-white">🐦</div> */}
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -44,7 +44,7 @@ const Hero = () => {
             <div className="mb-8 flex justify-center">
               <div className="relative w-64 h-64">
                 {/* Animated circular lines */}
-                <svg className="absolute inset-0 w-full h-full animate-spin" style={{ animationDuration: '20s' }}>
+                {/* <svg className="absolute inset-0 w-full h-full animate-spin" style={{ animationDuration: '20s' }}>
                   <circle
                     cx="128"
                     cy="128"
@@ -79,12 +79,12 @@ const Hero = () => {
                     strokeDasharray="6,3"
                     opacity="0.3"
                   />
-                </svg>
+                </svg> */}
                 
                 {/* NEST text in center */}
-                <div className="absolute inset-0 flex items-center justify-center">
+                {/* <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-white text-4xl font-bold tracking-wider animate-pulse-soft">NEST</span>
-                </div>
+                </div> */}
               </div>
             </div>
 

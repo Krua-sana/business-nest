@@ -22,21 +22,21 @@ const CoWorkingSection = () => {
 
   const plans = [
     {
-      name: "Day Pass",
-      price: "$25",
+      name: "Birt of passage Pass",
+      price: "€25",
       period: "per day",
       features: ["Desk access", "WiFi & beverages", "Community access", "Basic printing"]
     },
     {
-      name: "Monthly",
-      price: "$199",
+      name: "Basic Nest",
+      price: "€250",
       period: "per month",
       features: ["Dedicated desk", "24/7 access", "Meeting room credits", "Priority support"],
       popular: true
     },
     {
-      name: "Private Office", 
-      price: "$399",
+      name: "Big Nest", 
+      price: "€300",
       period: "per month",
       features: ["Private space", "Phone booth access", "Storage locker", "Team collaboration tools"]
     }
@@ -157,7 +157,7 @@ const CoWorkingSection = () => {
           <CardContent className="p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Visit Our Space</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">Visit Our Nest</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <MapPin className="h-5 w-5 text-orange-600 mr-3" />

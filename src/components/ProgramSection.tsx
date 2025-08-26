@@ -48,7 +48,7 @@ const ProgramSection = () => {
               10 <span className="text-orange-600">Saturdays</span>Program
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From idea to launch, we provide everything you need to build a successful business. 
+               Test From idea to launch, we provide everything you need to build a successful business. 
               Our comprehensive program is designed specifically for solo entrepreneurs and first-time founders.
             </p>
           </div>

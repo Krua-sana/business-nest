@@ -57,7 +57,7 @@ const ProgramSection = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div className="space-y-6">
               <img 
-                src="/lovable-uploads/df807106-0ae8-4f7d-9b7b-cdfccc994251.png"
+                src="/../../public/lovable-uploads/df807106-0ae8-4f7d-9b7b-cdfccc994251.png"
                 alt="Workshop presentation"
                 className="w-full h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               />

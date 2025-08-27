@@ -12,7 +12,8 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === "development" && componentTagger(),
+    mode === "development" &&
+    componentTagger(),
   ].filter(Boolean),
   base: mode === "production" ? "/business-nest/" : "/", // ⚠️ important for GitHub Pages
   //  base: '/business-nest/', // <-- Add this line

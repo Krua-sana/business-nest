@@ -57,24 +57,24 @@ const ProgramSection = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div className="space-y-6">
               <img 
-                src="/lovable-uploads/df807106-0ae8-4f7d-9b7b-cdfccc994251.png"
+                src={import.meta.env.BASE_URL + "/lovable-uploads/df807106-0ae8-4f7d-9b7b-cdfccc994251.png"}
                 alt="Workshop presentation"
                 className="w-full h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               />
               <img 
-                src="/lovable-uploads/345d1852-a0eb-4e0e-a530-0e3a4a1e7c27.png"
+                src= {import.meta.env.BASE_URL + "/lovable-uploads/345d1852-a0eb-4e0e-a530-0e3a4a1e7c27.png"}
                 alt="Team collaboration"
                 className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               />
             </div>
             <div className="space-y-6">
               <img 
-                src="/lovable-uploads/15e2ce9c-df71-4852-b67c-51ad6a43b557.png"
+                src={import.meta.env.BASE_URL + "/lovable-uploads/15e2ce9c-df71-4852-b67c-51ad6a43b557.png"}
                 alt="Program participants"
                 className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               />
               <img 
-                src="/lovable-uploads/b1b5869c-0fa2-4bea-81ee-a0707ac5e33b.png"
+                src={import.meta.env.BASE_URL + "/lovable-uploads/b1b5869c-0fa2-4bea-81ee-a0707ac5e33b.png"}
                 alt="Networking session"
                 className="w-full h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               />

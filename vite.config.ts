@@ -15,8 +15,8 @@ export default defineConfig(({ mode }) => ({
     mode === "development" &&
     componentTagger(),
   ].filter(Boolean),
-  base: mode === "production" ? "/business-nest/" : "/", // ⚠️ important for GitHub Pages
-  //  base: '/business-nest/', // <-- Add this line
+  // base: mode === "production" ? "/business-nest/" : "/", // ⚠️ important for GitHub Pages
+  base: '/business-nest/', // <-- Add this line
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

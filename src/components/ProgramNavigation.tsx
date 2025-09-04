@@ -78,29 +78,12 @@ const ProgramNavigation = () => {
             <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg">
               <div className="flex flex-col space-y-4 px-4">
                 <button 
-                  onClick={() => scrollToSection('program')}
-                  className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
-                >
-                  Program
-                </button>
-                <button 
-                  onClick={() => scrollToSection('experts')}
-                  className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
-                >
-                  Experts
-                </button>
-                <button 
-                  onClick={() => scrollToSection('coworking')}
-                  className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
-                >
-                  Co-Working
-                </button>
-                <button 
-                  onClick={() => scrollToSection('about')}
-                  className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
-                >
-                  About
-                </button>
+                onClick={() => window.location.href = '/'}
+                className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+              >
+                Back to Home
+              </button>
+                
                 {/*<Button 
                   className="bg-orange-500 hover:bg-orange-600 text-white"
                   onClick={handleJoinClick}

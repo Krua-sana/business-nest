@@ -38,14 +38,14 @@ const ProgramSection = () => {
   return (
     <>
       <section id="program" className="py-20 bg-white relative">
-        {/* Decorative Elements */}
+        {/* Decorative Elements 
         <div className="absolute top-10 left-10 text-4xl opacity-20 animate-float">🥚</div>
         <div className="absolute bottom-10 right-10 text-4xl opacity-20 animate-float-delayed">🐣</div>
-
+        */}
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              10 <span className="text-orange-600">Saturdays</span>Program
+              10 <span className="text-orange-600">Saturdays </span>Program
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From idea to launch, we provide everything you need to build a successful business. 
@@ -56,25 +56,32 @@ const ProgramSection = () => {
           {/* Program Showcase Images */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div className="space-y-6">
+              {/* Image for GitHub
               <img 
-                src={import.meta.env.BASE_URL + "/lovable-uploads/df807106-0ae8-4f7d-9b7b-cdfccc994251.png"}
+                src={import.meta.env.BASE_URL + "/lovable-uploads/15e2ce9c-df71-4852-b67c-51ad6a43b557.png"}
+                alt="Program participants"
+                className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              />
+              */}
+              <img 
+                src="/lovable-uploads/df807106-0ae8-4f7d-9b7b-cdfccc994251.png"
                 alt="Workshop presentation"
                 className="w-full h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               />
               <img 
-                src= {import.meta.env.BASE_URL + "/lovable-uploads/345d1852-a0eb-4e0e-a530-0e3a4a1e7c27.png"}
+                src="/lovable-uploads/345d1852-a0eb-4e0e-a530-0e3a4a1e7c27.png"
                 alt="Team collaboration"
                 className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               />
             </div>
             <div className="space-y-6">
               <img 
-                src={import.meta.env.BASE_URL + "/lovable-uploads/15e2ce9c-df71-4852-b67c-51ad6a43b557.png"}
+                src="/lovable-uploads/15e2ce9c-df71-4852-b67c-51ad6a43b557.png"
                 alt="Program participants"
                 className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               />
               <img 
-                src={import.meta.env.BASE_URL + "/lovable-uploads/b1b5869c-0fa2-4bea-81ee-a0707ac5e33b.png"}
+                src="/lovable-uploads/b1b5869c-0fa2-4bea-81ee-a0707ac5e33b.png"
                 alt="Networking session"
                 className="w-full h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               />
@@ -92,11 +99,12 @@ const ProgramSection = () => {
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 <CardHeader className="text-center">
+                  <div className="text-center">
                   <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 transition-colors ${
                     hoveredCard === index ? 'bg-orange-500 text-white' : 'bg-orange-100 text-orange-600'
                   }`}>
                     {feature.icon}
-                  </div>
+                  </div></div>
                   <CardTitle className="text-xl font-bold text-gray-800">
                     {feature.title}
                   </CardTitle>
@@ -120,7 +128,8 @@ const ProgramSection = () => {
             <Button 
               size="lg" 
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg hover:scale-105 transition-transform"
-              onClick={() => setIsFormOpen(true)}
+              onClick={() => window.location.href = '/program'}
+
             >
               Read about the Program
               <ArrowRight className="ml-2 h-5 w-5" />

@@ -9,60 +9,59 @@ const ExpertsSection = () => {
 
   const experts = [
     {
-      name: "Sarah Johnson",
-      role: "Startup Strategist",
-      expertise: "Business Development",
-      bio: "15+ years helping entrepreneurs transform ideas into profitable businesses",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b213?w=400&h=400&fit=crop&crop=face",
+      name: "Kris Smirnova",
+      role: "Trend watcher & Business facilitator",
+      expertise: "Social science & consumer insights",
+      bio: "15+ years helping businesses validate ideas and understand their customers",
+      image: "/lovable-uploads/Kris-Smirnova.jpg",
       social: {
-        linkedin: "#",
-        twitter: "#",
-        email: "sarah@businessnest.com"
+        linkedin: "https://www.linkedin.com/in/krissmir/",
+        email: "euphokris@gmail.com"
       }
     },
     {
-      name: "Michael Chen",
-      role: "Marketing Expert", 
-      expertise: "Digital Growth",
-      bio: "Helped 200+ startups achieve sustainable growth through innovative marketing",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      name: "Kateryna Saprunova",
+      role: "Community Builder & Experience Designer", 
+      expertise: "IT & Service Design",
+      bio: "Helping solopreneurs to build their business with design thinking and Lean Startup methodologies",
+      image: "/lovable-uploads/Kateryna-Saprunova.jpg",
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/saprunova-kateryna/",
         twitter: "#", 
-        email: "michael@businessnest.com"
+        email: "miaryna@gmail.com"
       }
     },
     {
-      name: "Emily Rodriguez",
-      role: "Financial Advisor",
+      name: "Dilip Kumar Mulluri",
+      role: "IT Mentor and Startup Advisor",
       expertise: "Investment & Funding",
       bio: "Former VC partner with expertise in early-stage funding and financial planning",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
+      image: "/lovable-uploads/Dilip-Kumar-Mulluri.png",
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/dilip-kumar-mulluri-90243b77/",
         twitter: "#",
-        email: "emily@businessnest.com"
+        email: "dilip.kumar1408@gmail.com"
       }
     },
     {
-      name: "David Kim",
-      role: "Tech Mentor",
-      expertise: "Product Development",
+      name: "Simeon Dimov",
+      role: "AI Mentor and Tech Strategist",
+      expertise: "AI Product Development",
       bio: "Serial entrepreneur and CTO with 3 successful exits in the tech industry",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      image: "/lovable-uploads/Simeon-Dimov.jpg",
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/simeon-dimov-bb429016b/",
         twitter: "#",
-        email: "david@businessnest.com"
+        email: "simeondimow@gmail.com"
       }
     }
   ];
 
   return (
     <section id="experts" className="py-20 bg-gradient-to-b from-orange-50 to-amber-50 relative">
-      {/* Decorative Elements */}
+      {/* Decorative Elements
       <div className="absolute top-20 right-20 text-5xl opacity-20 animate-float">🪺</div>
-      <div className="absolute bottom-20 left-20 text-5xl opacity-20 animate-float-delayed">🐦</div>
+      <div className="absolute bottom-20 left-20 text-5xl opacity-20 animate-float-delayed">🐦</div>*/}
 
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
@@ -101,9 +100,7 @@ const ExpertsSection = () => {
                     <Button size="sm" variant="ghost" className="h-8 w-8 p-0 bg-white/20 backdrop-blur-sm hover:bg-white/30">
                       <Linkedin className="h-4 w-4 text-white" />
                     </Button>
-                    <Button size="sm" variant="ghost" className="h-8 w-8 p-0 bg-white/20 backdrop-blur-sm hover:bg-white/30">
-                      <Twitter className="h-4 w-4 text-white" />
-                    </Button>
+                    
                     <Button size="sm" variant="ghost" className="h-8 w-8 p-0 bg-white/20 backdrop-blur-sm hover:bg-white/30">
                       <Mail className="h-4 w-4 text-white" />
                     </Button>
@@ -123,10 +120,11 @@ const ExpertsSection = () => {
 
         <div className="text-center">
           <Button 
+            onClick={() => window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfFLyaRKHr2guufARjs5ZHQkD7h1D9AOcCAFgsAOagLBNV49A/viewform?usp=header'}
             size="lg" 
             className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg hover:scale-105 transition-transform"
           >
-            Schedule a Mentorship Session
+            Become our Expert
           </Button>
         </div>
       </div>

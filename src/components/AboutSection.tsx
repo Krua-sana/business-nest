@@ -30,18 +30,19 @@ const AboutSection = () => {
   ];
 
   const stats = [
-    { number: "500+", label: "Entrepreneurs Supported" },
-    { number: "150+", label: "Businesses Launched" },
+    { number: "in 2", label: "Years of Impact" },
+    { number: "500+", label: "Entrepreneurs Community" },
+    { number: "20+", label: "Businesses Launched" },
     { number: "95%", label: "Success Rate" },
-    { number: "3+", label: "Years of Impact" }
+    
   ];
 
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-amber-50 to-orange-100 relative">
-      {/* Decorative Elements */}
+      {/* Decorative Elements
       <div className="absolute top-20 left-10 text-6xl opacity-20 animate-float">🐦</div>
       <div className="absolute bottom-20 right-10 text-6xl opacity-20 animate-float-delayed">🪺</div>
-      <div className="absolute top-1/2 left-1/4 text-4xl opacity-10 animate-float">🥚</div>
+      <div className="absolute top-1/2 left-1/4 text-4xl opacity-10 animate-float">🥚</div>*/}
 
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
@@ -76,12 +77,12 @@ const AboutSection = () => {
           </div>
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop"
+              src="/lovable-uploads/Nest_team.jpeg"
               alt="Team collaboration"
               className="rounded-lg shadow-xl"
             />
             <div className="absolute -bottom-6 -right-6 bg-orange-500 text-white p-6 rounded-lg shadow-lg">
-              <div className="text-2xl font-bold">Est. 2021</div>
+              <div className="text-2xl font-bold">Est. 2024</div>
               <div className="text-sm">Building Dreams</div>
             </div>
           </div>
@@ -119,7 +120,7 @@ const AboutSection = () => {
         {/* Stats */}
         <div className="text-center">
           <h3 className="text-3xl font-bold text-gray-800 mb-12">
-            Our <span className="text-orange-600">Impact</span>
+            Our <span className="text-orange-600">Goal</span>
           </h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {stats.map((stat, index) => (

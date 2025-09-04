@@ -69,19 +69,19 @@ const CoWorkingSection = () => {
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           <div className="md:col-span-2">
             <img 
-              src={import.meta.env.BASE_URL + "/lovable-uploads/5302e45b-1982-477b-9632-bf35dd997796.png"}
+              src="/lovable-uploads/5302e45b-1982-477b-9632-bf35dd997796.png"
               alt="Co-working space atmosphere"
               className="w-full h-80 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             />
           </div>
           <div className="space-y-6">
             <img 
-              src={import.meta.env.BASE_URL + "/lovable-uploads/b1b5869c-0fa2-4bea-81ee-a0707ac5e33b.png"}
+              src="/lovable-uploads/b1b5869c-0fa2-4bea-81ee-a0707ac5e33b.png"
               alt="Networking and collaboration"
               className="w-full h-36 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             />
             <img 
-              src={import.meta.env.BASE_URL + "/lovable-uploads/345d1852-a0eb-4e0e-a530-0e3a4a1e7c27.png"}
+              src="/lovable-uploads/345d1852-a0eb-4e0e-a530-0e3a4a1e7c27.png"
               alt="Team meeting space"
               className="w-full h-36 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             />
@@ -137,7 +137,7 @@ const CoWorkingSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button 
+                  {/*<Button 
                     className={`w-full mt-6 ${
                       plan.popular 
                         ? 'bg-orange-500 hover:bg-orange-600 text-white' 
@@ -145,7 +145,7 @@ const CoWorkingSection = () => {
                     }`}
                   >
                     Get Started
-                  </Button>
+                  </Button>*/}
                 </CardContent>
               </Card>
             ))}
@@ -157,15 +157,15 @@ const CoWorkingSection = () => {
           <CardContent className="p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Visit Our Nest</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">Visit co-working space</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <MapPin className="h-5 w-5 text-orange-600 mr-3" />
-                    <span className="text-gray-600">123 Innovation Street, Tech District, City 12345</span>
+                    <span className="text-gray-600">Torenallee 62-22, Building Anton, 1st floor, 5617 BD Eindhoven</span>
                   </div>
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-orange-600 mr-3" />
-                    <span className="text-gray-600">+1 (555) 123-4567</span>
+                    <span className="text-gray-600">+31 6 1319 74 66</span>
                   </div>
                   <div className="flex items-center">
                     <Clock className="h-5 w-5 text-orange-600 mr-3" />
@@ -173,7 +173,7 @@ const CoWorkingSection = () => {
                   </div>
                 </div>
               </div>
-              <div>
+              {/*<div>
                 <Button 
                   size="lg" 
                   className="w-full bg-orange-500 hover:bg-orange-600 text-white mb-4"
@@ -187,7 +187,7 @@ const CoWorkingSection = () => {
                 >
                   Book a Day Pass
                 </Button>
-              </div>
+              </div>*/}
             </div>
           </CardContent>
         </Card>

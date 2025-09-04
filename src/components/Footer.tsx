@@ -26,16 +26,20 @@ const Footer = () => {
               Where entrepreneurs come to hatch their business ideas into successful ventures.
             </p>
             <div className="flex space-x-4">
-              <Button size="sm" variant="ghost" className="h-10 w-10 p-0 hover:bg-orange-500">
+             {/*} <Button size="sm" variant="ghost" className="h-10 w-10 p-0 hover:bg-orange-500">
                 <Facebook className="h-5 w-5" />
               </Button>
               <Button size="sm" variant="ghost" className="h-10 w-10 p-0 hover:bg-orange-500">
                 <Twitter className="h-5 w-5" />
-              </Button>
-              <Button size="sm" variant="ghost" className="h-10 w-10 p-0 hover:bg-orange-500">
+              </Button>*/}
+              <Button 
+                onClick={() => window.location.href = 'https://www.linkedin.com/company/the-startup-nest/'}
+                size="sm" variant="ghost" className="h-10 w-10 p-0 hover:bg-orange-500">
                 <Linkedin className="h-5 w-5" />
               </Button>
-              <Button size="sm" variant="ghost" className="h-10 w-10 p-0 hover:bg-orange-500">
+              <Button 
+                onClick={() => window.location.href = 'https://www.instagram.com/startup.nest.nl'}
+                size="sm" variant="ghost" className="h-10 w-10 p-0 hover:bg-orange-500">
                 <Instagram className="h-5 w-5" />
               </Button>
             </div>
@@ -98,21 +102,21 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center text-gray-400">
                 <MapPin className="h-5 w-5 mr-3 text-orange-500" />
-                <span className="text-sm">123 Innovation Street<br />Tech District, City 12345</span>
+                <span className="text-sm">Torenallee 62-22, <br/> Building Anton, 1st floor, 5617 BD Eindhoven</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <Phone className="h-5 w-5 mr-3 text-orange-500" />
-                <span>+1 (555) 123-4567</span>
+                <span>+31 6 2791 43 16</span>
               </div>
-              <div className="flex items-center text-gray-400">
+              {/*<div className="flex items-center text-gray-400">
                 <Mail className="h-5 w-5 mr-3 text-orange-500" />
                 <span>hello@businessnest.com</span>
-              </div>
+              </div>*/}
             </div>
           </div>
         </div>
 
-        {/* Newsletter */}
+        {/* Newsletter 
         <div className="border-t border-gray-800 pt-8 mb-8">
           <div className="max-w-md mx-auto text-center">
             <h3 className="text-xl font-semibold mb-4">Stay Updated</h3>
@@ -128,11 +132,11 @@ const Footer = () => {
               </Button>
             </div>
           </div>
-        </div>
+        </div>*/}
 
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Business Nest. All rights reserved. Made with ❤️ for entrepreneurs.</p>
+          <p>&copy; 2025 Business Nest. All rights reserved. Made with ❤️ for entrepreneurs.</p>
         </div>
       </div>
     </footer>

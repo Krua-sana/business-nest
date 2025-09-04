@@ -41,52 +41,7 @@ const Hero = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             {/* Animated Logo */}
-            <div className="mb-8 flex justify-center">
-              <div className="relative w-64 h-64">
-                {/* Animated circular lines */}
-                {/* <svg className="absolute inset-0 w-full h-full animate-spin" style={{ animationDuration: '20s' }}>
-                  <circle
-                    cx="128"
-                    cy="128"
-                    r="120"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeDasharray="10,5"
-                    opacity="0.6"
-                  />
-                </svg>
-                <svg className="absolute inset-0 w-full h-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}>
-                  <circle
-                    cx="128"
-                    cy="128"
-                    r="100"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeDasharray="8,4"
-                    opacity="0.4"
-                  />
-                </svg>
-                <svg className="absolute inset-0 w-full h-full animate-spin" style={{ animationDuration: '25s' }}>
-                  <circle
-                    cx="128"
-                    cy="128"
-                    r="80"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="1"
-                    strokeDasharray="6,3"
-                    opacity="0.3"
-                  />
-                </svg> */}
-                
-                {/* NEST text in center */}
-                {/* <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold tracking-wider animate-pulse-soft">NEST</span>
-                </div> */}
-              </div>
-            </div>
+            
 
             {/* Main Heading */}
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
@@ -120,8 +75,8 @@ const Hero = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 max-w-lg mx-auto mb-16">
-              <div className="text-center animate-fade-in">
-                <div className="text-3xl font-bold text-orange-400">100+</div>
+              {/*<div className="text-center animate-fade-in">
+                <div className="text-3xl font-bold text-orange-400">200+</div>
                 <div className="text-sm text-gray-400">Entrepreneurs</div>
               </div>
               <div className="text-center animate-fade-in">
@@ -131,7 +86,7 @@ const Hero = () => {
               <div className="text-center animate-fade-in">
                 <div className="text-3xl font-bold text-orange-400">24/7</div>
                 <div className="text-sm text-gray-400">Support</div>
-              </div>
+              </div>*/}
             </div>
           </div>
 

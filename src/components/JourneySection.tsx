@@ -25,13 +25,13 @@ const JourneySection = () => {
       name: "Join the Nest Community",
       
       
-      features: ["Support of like-minded people", "Events calendar", "Free workshops", "Reguar networking"]
+      features: ["Support of like-minded people", "Events calendar", "Free workshops", "Regular networking"]
     },
     {
       name: "10 Saturdays program",
      
       
-      features: ["Nest your idea into a business", "Support of experts", "Foud raising"],
+      features: ["Nest your idea into a business", "Support of experts", "Pitch for funding", "and more"],
       popular: true
     },
      {
@@ -81,7 +81,7 @@ const JourneySection = () => {
               >
                 {plan.popular && (
                   <div className="absolute top-0 left-0 right-0 bg-orange-500 text-white text-center py-2 text-sm font-semibold">
-                    Most Popular
+                    Coming Soon
                   </div>
                 )}
                 <CardHeader className={`text-center ${plan.popular ? 'pt-12' : ''}`}>
@@ -101,7 +101,7 @@ const JourneySection = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button 
+                  {/*<Button 
                     className={`w-full mt-6 ${
                       plan.popular 
                         ? 'bg-orange-500 hover:bg-orange-600 text-white' 
@@ -109,7 +109,7 @@ const JourneySection = () => {
                     }`}
                   >
                     Get Started
-                  </Button>
+                  </Button>*/}
                 </CardContent>
               </Card>
             ))}

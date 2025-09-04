@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import JoinNestForm from './JoinNestForm';
 
-const Navigation = () => {
+const ProgramNavigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -50,35 +50,12 @@ const Navigation = () => {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               <button 
-                onClick={() => scrollToSection('journey')}
+                onClick={() => window.location.href = '/'}
                 className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
-                Journey
+                Back to Home
               </button>
-              <button 
-                onClick={() => scrollToSection('program')}
-                className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
-              >
-                Program
-              </button>
-              <button 
-                onClick={() => scrollToSection('experts')}
-                className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
-              >
-                Experts
-              </button>
-              <button 
-                onClick={() => scrollToSection('coworking')}
-                className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
-              >
-                Co-Working
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
-              >
-                About
-              </button>
+              
               {/*<Button 
                 className="bg-orange-500 hover:bg-black-600 text-white" 
                 onClick={handleJoinClick}
@@ -141,4 +118,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default ProgramNavigation;

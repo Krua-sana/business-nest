@@ -144,8 +144,8 @@ export default function TenSaturdaysPage() {
           </p>
         </div>
         
-        <div className="mt-8 grid md:grid-cols-3 gap-6">
-          <Card className="border-primary/30">
+        <div className="mt-8 grid md:grid-cols-1 gap-6">
+          {/*<Card className="border-primary/30">
             <CardHeader>
               <CardTitle className="text-2xl">Hatch Edition</CardTitle>
             </CardHeader>
@@ -163,16 +163,18 @@ export default function TenSaturdaysPage() {
               </ul>
               <a href="#apply"><Button className="mt-4 w-full">Apply for Pilot</Button></a>
             </CardContent>
-          </Card>
+          </Card>*/}
           <Card className="border-primary/30">
             <CardHeader>
-              <CardTitle className="text-2xl">Spouses Wings</CardTitle>
+              <CardTitle className="text-4xl font-bold">Spouses Wings</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              <div className="text-4xl font-bold">€500</div>
+              <div className="text-2xl">Start at 25 October 2025</div>
               <div className="text-xl text-gray-600 text-muted-foreground">Tailored for unemployed partners of immigrants, building new opportunities in a supportive community.</div>
               <ul className="mt-4 mb-4 space-y-2 text-sm">
-                <li>• 10 Saturdays</li>
+                <li>• The program for immigrant spouses</li>
+                <li>• The Pilot price €500 (with discount)</li>
+                <li>• Duration is 10 Saturdays</li>
                 <li>• 10-15 participants</li>
                 <li>• Experts consultancy on Saturdays</li>
                 <li>• Experts consultancy during open hours</li>
@@ -183,7 +185,7 @@ export default function TenSaturdaysPage() {
               <a href="#apply"><Button className="mt-4 w-full">Apply for Pilot</Button></a>
             </CardContent>
           </Card>
-          <Card>
+          {/*<Card>
             <CardHeader>
               <CardTitle className="text-2xl">Flight Path</CardTitle>
             </CardHeader>
@@ -202,7 +204,7 @@ export default function TenSaturdaysPage() {
               </ul>
               <Button className="mt-4 w-full" variant="secondary">Coming soon</Button>
             </CardContent>
-          </Card>
+          </Card>*/}
         </div>
       </section>
 

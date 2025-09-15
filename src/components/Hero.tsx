@@ -64,13 +64,13 @@ const Hero = () => {
                 Start Your Journey
                 <Play className="ml-2 h-5 w-5" />
               </Button>
-              <Button 
+              {/*<Button 
                 variant="outline" 
                 size="lg" 
                 className="border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white px-8 py-4 text-lg hover:scale-105 transition-transform"
               >
                 Learn More
-              </Button>
+              </Button>*/}
             </div>
 
             {/* Stats */}

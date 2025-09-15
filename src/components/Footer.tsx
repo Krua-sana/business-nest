@@ -136,7 +136,8 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 Business Nest. All rights reserved. Made with ❤️ for entrepreneurs.</p>
+          <p>© {new Date().getFullYear()} Business Nest. All rights reserved. Made with ❤️ for entrepreneurs.</p>
+          
         </div>
       </div>
     </footer>

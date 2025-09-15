@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import TenSaturdays from "./pages/TenSaturdays";
+import TenSaturdaysSpouses from "./pages/TenSaturdays-spouses";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
           <Route path="/program" element={<TenSaturdays />} />
+          <Route path="/program-spouses" element={<TenSaturdaysSpouses />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

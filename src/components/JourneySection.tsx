@@ -49,14 +49,14 @@ const JourneySection = () => {
   return (
     <section id="journey" className="py-20 bg-white relative overflow-hidden">
       {/* Parallax Background */}
-      <div 
+      {/*<div 
         className="absolute inset-0 opacity-5"
         style={{ transform: `translateY(${scrollY * 0.2}px)` }}
       >
         <div className="absolute top-10 left-1/4 text-8xl">🪺</div>
         <div className="absolute top-1/2 right-1/4 text-6xl">🐣</div>
         <div className="absolute bottom-10 left-1/3 text-7xl">🥚</div>
-      </div>
+      </div>*/}
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">

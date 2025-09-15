@@ -76,13 +76,12 @@ export default function TenSaturdaysPage() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/10 via-background to-background" />
         <div className="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">10  <span className="text-orange-600">Saturdays </span> Program</h1>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">10 <span className="text-orange-600">Saturdays </span> Spouses</h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              A focused incubation journey for early-stage founders. Meet peers, learn from experts,
-              and build momentum across ten themed Saturdays.
+              Migrant Spouses 10 Saturdays program is a practical incubator program for aspiring founders, makers, and creatives who want to turn their ideas into businesses while building a new life in the Netherlands.
             </p>
             <p className="mt-2 text-muted-foreground">
-              You’ll leave with clarity, a practical roadmap, and a stronger community around your idea.
+              It was designed specifically to support spouses and partners of highly skilled migrants in launching successful businesses in the Netherlands.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="#apply">
@@ -96,7 +95,7 @@ export default function TenSaturdaysPage() {
           <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow">
             {/* Place your image into /public/images/hero.jpg or update the src below */}
             <img
-              src="/lovable-uploads/co-create_with_experts.png"
+              src="/lovable-uploads/program-spouses.jpeg"
               alt="Business Nest 10 Saturdays program"
               className="h-full w-full object-cover"
               loading="eager"
@@ -166,24 +165,24 @@ export default function TenSaturdaysPage() {
           </Card>*/}
           <Card className="border-primary/30">
             <CardHeader>
-              <CardTitle className="text-4xl font-bold">Flight Path</CardTitle>
+              <CardTitle className="text-4xl font-bold">Spouses Wings</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              {/*<div className="text-2xl">Start at 25 October 2025</div>*/}
+              <div className="text-2xl">Start at 25 October 2025</div>
               <div className="text-xl text-gray-600 text-muted-foreground">Tailored for unemployed partners of immigrants, building new opportunities in a supportive community.</div>
               <ul className="mt-4 mb-4 space-y-2 text-sm">
-                <li>• The price €1000 </li>
+                <li>• The program for immigrant spouses</li>
+                <li>• The Pilot price €500 (with discount)</li>
                 <li>• Duration is 10 Saturdays</li>
                 <li>• 10-15 participants</li>
                 <li>• Experts consultancy on Saturdays</li>
                 <li>• Experts consultancy during open hours</li>
                 <li>• All materials in digital and printed</li>
                 <li>• Private group within community</li>
-                <li>• 2 promotions during/after the program</li>
                 <li>• Catering during Saturdays</li>
               </ul>
               <a href="#apply"><Button 
-              onClick={() => window.location.href = 'https://forms.gle/3wNJf2ChEezUZYnFA'}
+              onClick={() => window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScHiDPsANGTkDhJR1mh9RAtNsjUeg7eWctAvfi8pXaKpkRYBw/viewform'}
               className="mt-4 w-full">Apply for Program</Button></a>
             </CardContent>
           </Card>
@@ -243,24 +242,24 @@ export default function TenSaturdaysPage() {
 */}
       {/* CTA */}
       <section className="py-20 bg-gradient-to-b from-orange-50 to-amber-50 relative ">
-        <div className="bg-card rounded-2xl border p-8 md:p-12 text-center mx-auto max-w-6xl px-4 py-16 ">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Not ready?</h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            Join our entrepreneur community — explore, connect, and get inspired!
-          </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            {/* Replace the href with your MAINapplication link (form or mailto) */}
-            {/*<a href="mailto:team@business-nest.nl?subject=10%20Saturdays%20Application">*/}
-              <Button size="lg"
-                onClick={() => window.location.href = 'https://business-nest.circle.so/join?invitation_token=b32a18f83b453fa036b35710949821907a26665c-54c2faac-26f0-4f2d-8e88-56be8a4e2772'}
-              >
-                Join the Community
-                </Button>
-            {/*</a>*/}
-           
-          </div>
-        </div>
-      </section>
+              <div className="bg-card rounded-2xl border p-8 md:p-12 text-center mx-auto max-w-6xl px-4 py-16 ">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Not ready?</h2>
+                <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+                  Join our entrepreneur community — explore, connect, and get inspired!
+                </p>
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                  {/* Replace the href with your MAINapplication link (form or mailto) */}
+                  {/*<a href="mailto:team@business-nest.nl?subject=10%20Saturdays%20Application">*/}
+                    <Button size="lg"
+                      onClick={() => window.location.href = 'https://business-nest.circle.so/join?invitation_token=947d95284d41335e1f92194cc9cba10dbf2ecb59-b0a58ce1-d0c8-4257-b81d-dd375ae713f8'}
+                    >
+                      Join the Community
+                      </Button>
+                  {/*</a>*/}
+                 
+                </div>
+              </div>
+            </section>
 
       {/* Replace with your MAINfooter component if available */}
       <Footer />

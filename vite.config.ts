@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import ViteSitemapPlugin from "vite-plugin-sitemap";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
@@ -12,6 +13,11 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
+     ViteSitemapPlugin({
+      hostname: "https://business-nest.nl", // your domain
+      outDir: "dist",
+      dynamicRoutes: ["/program", "/experts"], // add custom routes
+    }),
     mode === "development" &&
     componentTagger(),
   ].filter(Boolean),

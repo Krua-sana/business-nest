@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import TenSaturdays from "./pages/TenSaturdays";
 import TenSaturdaysSpouses from "./pages/TenSaturdays-spouses";
+import ExpertsPage from "./pages/Expertspage";
+
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,8 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
           <Route path="/program" element={<TenSaturdays />} />
           <Route path="/program-spouses" element={<TenSaturdaysSpouses />} />
+          <Route path="/experts" element={<ExpertsPage />} />
+
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -108,10 +108,10 @@ const Footer = () => {
                 <Phone className="h-5 w-5 mr-3 text-orange-500" />
                 <span>+31 6 2791 43 16</span>
               </div>
-              {/*<div className="flex items-center text-gray-400">
+              <div className="flex items-center text-gray-400">
                 <Mail className="h-5 w-5 mr-3 text-orange-500" />
-                <span>hello@businessnest.com</span>
-              </div>*/}
+                <span>info@business-nest.nl</span>
+              </div>
             </div>
           </div>
         </div>

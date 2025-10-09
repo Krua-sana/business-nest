@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Lightbulb, Target, Users, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
+import { Lightbulb, Target, Users, TrendingUp, CheckCircle, ArrowRight, Sparkles } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import JoinNestForm from './JoinNestForm';
@@ -20,6 +20,12 @@ const ProgramSection = () => {
       title: "Business Strategy",
       description: "Build a solid foundation with comprehensive business planning and strategic guidance",
       benefits: ["Business model canvas", "Financial planning", "Go-to-market strategy"]
+    },
+    {
+      icon: <Sparkles className="h-8 w-8" />,
+      title: "AI as a Co-creator",
+      description: "Speed up your business design process with AI-powered tools and techniques",
+      benefits: ["Learn prompting on a go", "Minimize costs", "Get working prototypes faster"]
     },
     {
       icon: <Users className="h-8 w-8" />,
@@ -88,7 +94,7 @@ const ProgramSection = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
             {features.map((feature, index) => (
               <Card 
                 key={index}

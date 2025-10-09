@@ -67,7 +67,7 @@ export default function ExpertsPage() {
           </div>
           <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow">
             <img
-              src="/images/experts/hero-expert.jpg"
+              src="/lovable-uploads/345d1852-a0eb-4e0e-a530-0e3a4a1e7c27.png"
               alt="Expert speaking to an audience"
               className="h-full w-full object-cover"
             />
@@ -113,8 +113,8 @@ export default function ExpertsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="mx-auto max-w-6xl px-4 py-16">
-        <div className="rounded-2xl border p-8 md:p-12 text-center">
+      <section className="mx-auto max-w-6xl px-4 py-16 from-orange-50 to-amber-50 ">
+        <div className="rounded-2xl border p-8 md:p-12 text-center bg-gradient-to-b from-orange-50 to-amber-50 shadow-lg">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
             Want to become an expert?
           </h2>

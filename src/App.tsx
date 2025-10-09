@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound";
 import TenSaturdays from "./pages/TenSaturdays";
 import TenSaturdaysSpouses from "./pages/TenSaturdays-spouses";
 import ExpertsPage from "./pages/Expertspage";
+import ApplicationForm from "./pages/ApplicationForm";
+
 
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/program" element={<TenSaturdays />} />
           <Route path="/program-spouses" element={<TenSaturdaysSpouses />} />
           <Route path="/experts" element={<ExpertsPage />} />
+          <Route path="/apply" element={<ApplicationForm />} />
+
 
         </Routes>
       </BrowserRouter>

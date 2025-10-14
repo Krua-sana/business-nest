@@ -64,36 +64,44 @@ export default function TenSaturdaysPage() {
 
   const modules = [
     { 
-      title: "Saturday 1: Orientation & Purpose", 
-      subtitle: "Discover your entrepreneurial identity", 
-      topics: ["Program overview", "Introduction to AI-assisted business ideation", "Spouse-to-founder success stories", "Networking session"], 
+      title: "Saturday 1: Problem discovery and Idea Generation", 
+      subtitle: "Identify real-world problems worth solving", 
+      topics: ["How to look up for problems and ideas", "How to check if there is a market for your idea", "Business Model Canvas to structure your process", "AI as a co-creator, practical prompting"], 
       month: "OCT", day: "25"
     },
-    { title: "Saturday 2: From Idea to Business Model", subtitle: "Build your AI-enhanced business map", topics: ["Business model canvas", "AI tools for market research", "Finding your niche", "Group exercises"], 
+    { title: "Saturday 2: Customer Discovery", subtitle: "Know your customer", 
+      topics: ["How to choose and build a customer profile", "Jobs to be Done framework", "How to test the concept with a relevant audience", "Interview exercises"], 
       month: "NOV", day: "01"
     },
-    { title: "Saturday 3: Branding & Positioning", subtitle: "Craft your message and story", topics: ["Brand storytelling", "AI content generation", "Logo & identity creation", "Visual communication basics"], 
+    { title: "Saturday 3: Prototyping & MVP, Usability Testing", subtitle: "Create a tangible product to test", 
+      topics: ["How to build your product sample: digital or physical", "MVP or Prototype?", "How to create prototypes with AI tools", "How to publish your digital product online", "Usability testing basics"], 
       month: "NOV", day: "08"
     },
-    { title: "Saturday 4: Marketing Foundations", subtitle: "Grow visibility with AI support", topics: ["AI-driven marketing strategies", "Social media automation", "Understanding customer journeys"], 
+    { title: "Saturday 4: Business Model, Legal & businesses environment in NL", subtitle: "Secure your idea", 
+      topics: ["Legal & Bureaucratic “Must-Knows", "VAT & taxation basics", "Permits & sector-specific licenses (food, health, fintech, etc.)", "NL Business and cultural landscape"], 
       month: "NOV", day: "15"
     },
-    { title: "Saturday 5: Financial Clarity", subtitle: "Money matters made simple", topics: ["Budget planning", "Pricing strategies", "Financial tools overview"], 
+    { title: "Saturday 5: Business as a lifestyle", subtitle: "Align your strengths and passions with your business idea", 
+      topics: ["Business and exit strategies", "Decision making framework", "Stress management"], 
       month: "NOV", day: "22"
     },
-    { title: "Saturday 6: Legal & Administration", subtitle: "Get your business set up safely", topics: ["Legal basics", "Business registration", "Privacy & data ethics with AI"], 
+    { title: "Saturday 6: Mid-way pitch, Revenue model", subtitle: "Learn how to structure your business for sustainable income and scalability", 
+      topics: ["Who pays you?", "For what exactly customers pays you?", "How do they pay (once, recurring, indirect)?", "How much should be charged and why?"], 
       month: "JAN", day: "17"
     },
-    { title: "Saturday 7: Product & Prototyping", subtitle: "Bring your ideas to life", topics: ["MVP concepting", "AI tools for prototyping", "User feedback sessions"], 
+    { title: "Saturday 7: Marketing & Branding, Sales, Acquisition Strategies", subtitle: "Craft a brand identity and strategy that connects with your target audience", 
+      topics: ["Basics of brand building & communication", "Sales: mindset and basics"], 
       month: "JAN", day: "24"
     },
-    { title: "Saturday 8: Communication & Networking", subtitle: "Build meaningful connections", topics: ["Pitching", "Public speaking", "Networking exercises"], 
+    { title: "Saturday 8: Financial Planning, Funding Options, Roadmap", subtitle: "Understand startup finances, explore funding opportunities, and map your business journey", 
+      topics: ["How to calculate costs to start the business", "Where to look for investments", "Roadmap planning (short / long-term)"], 
       month: "JAN", day: "31"
     },
-    { title: "Saturday 9: Sustainability & Growth", subtitle: "Plan for impact and longevity", topics: ["Sustainable models", "AI for measuring growth", "Circular business practices"],
+    { title: "Saturday 9: Pitch Deck Development & Storytelling", subtitle: "Build a compelling pitch deck and learn how to tell your startup story", 
+      topics: ["Storytelling", "How to find your voice and deliver the message", "Preparation of the pitch deck or presentation", "Tips about different types of investors and what they pay attention to", "How to present yourself and act in the process"],
       month: "FEB", day: "07"
     },
-    { title: "Saturday 10: Demo Day", subtitle: "Present your progress", topics: ["Final presentations", "Feedback from experts", "Next steps & alumni benefits"], 
+    { title: "Saturday 10: Pitching day!", subtitle: "Present your progress", topics: ["Final presentations", "Receive the feedback and recommendations", "Next steps & alumni benefits", "Celebrate with us!"], 
       month: "FEB", day: "14"
     },
   ];

@@ -499,13 +499,13 @@ const experts = [
               <div className="bg-card rounded-2xl border p-8 md:p-12 text-center mx-auto max-w-6xl px-4 py-16 ">
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Not ready?</h2>
                 <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-                  Join our entrepreneur community — explore, connect, and get inspired!
+                  Join our Eindhoven Entrepreneurs community — explore, connect, and get inspired!
                 </p>
                 <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                   {/* Replace the href with your MAINapplication link (form or mailto) */}
                   {/*<a href="mailto:team@business-nest.nl?subject=10%20Saturdays%20Application">*/}
                     <Button size="lg"
-                      onClick={() => window.location.href = 'https://business-nest.circle.so/join?invitation_token=947d95284d41335e1f92194cc9cba10dbf2ecb59-b0a58ce1-d0c8-4257-b81d-dd375ae713f8'}
+                      onClick={() => window.location.href = 'https://chat.whatsapp.com/JhUPSrzHIk92iCm4kzdsRL'}
                     >
                       Join the Community
                       </Button>

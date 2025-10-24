@@ -246,13 +246,13 @@ export default function TenSaturdaysPage() {
         <div className="bg-card rounded-2xl border p-8 md:p-12 text-center mx-auto max-w-6xl px-4 py-16 ">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Not ready?</h2>
           <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            Join our entrepreneur community — explore, connect, and get inspired!
+            Join our Eindhoven Entrepreneurs community — explore, connect, and get inspired!
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             {/* Replace the href with your MAINapplication link (form or mailto) */}
             {/*<a href="mailto:team@business-nest.nl?subject=10%20Saturdays%20Application">*/}
               <Button size="lg"
-                onClick={() => window.location.href = 'https://business-nest.circle.so/join?invitation_token=b32a18f83b453fa036b35710949821907a26665c-54c2faac-26f0-4f2d-8e88-56be8a4e2772'}
+                onClick={() => window.location.href = 'https://chat.whatsapp.com/JhUPSrzHIk92iCm4kzdsRL'}
               >
                 Join the Community
                 </Button>

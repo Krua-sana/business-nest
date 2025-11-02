@@ -25,10 +25,10 @@ const experts = [
     linkedin: "https://www.linkedin.com/in/anna-ezerskiy/",
   },
   {
-    name: "Ana Zonina",
-    field: "Idea validation, product-market fit and business model, Lean Startup, product marketing, business development.",
-    photo: "/images/experts/Ana-Zonina.jpg",
-    linkedin: "https://www.linkedin.com/in/anastasiazonina/",
+    name: "Magdaleen Jooste",
+    field: "Patent attorney and lawyer helping innovators protect and leverage their ideas effectively.",
+    photo: "/images/experts/Magdaleen.jpg",
+    linkedin: "https://www.linkedin.com/in/magdaleen-jooste/",
   },
   {
     name: "Guido Groeneweg",
@@ -37,10 +37,10 @@ const experts = [
     linkedin: "https://www.linkedin.com/in/guidogroeneweg/",
   },
   {
-    name: "Yolima Grandas",
-    field: "Founder of International Creative Women and Thryves, serial entrepreneur, business developer, and mentor.",
-    photo: "/images/experts/Yolima-Grandas.png",
-    linkedin: "https://thryves.nl/",
+    name: "Giovanni Beccu",
+    field: "Brand designer helping express a distinct point of view that sets your business apart.",
+    photo: "/images/experts/Giovanni.jpg",
+    linkedin: "https://www.linkedin.com/in/giovanni-beccu/",
   },
 ];
 

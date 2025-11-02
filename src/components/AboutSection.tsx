@@ -77,7 +77,7 @@ const AboutSection = () => {
           </div>
           <div className="relative">
             <img 
-              src="/lovable-uploads/Nest_team.jpeg"
+              src="/lovable-uploads/Nest_team-1.JPG"
               alt="Team collaboration"
               className="rounded-lg shadow-xl"
             />

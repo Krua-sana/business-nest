@@ -22,8 +22,8 @@ const CoWorkingSection = () => {
 
   const plans = [
     {
-      name: "Birt of passage Pass",
-      price: "€25",
+      name: "Try for a Day",
+      price: "FREE",
       period: "per day",
       features: ["Desk access", "WiFi & beverages", "Community access", "Basic printing"]
     },
@@ -60,8 +60,7 @@ const CoWorkingSection = () => {
             Your <span className="text-orange-600">Creative Workspace</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Join our vibrant co-working community where entrepreneurs collaborate, innovate, 
-            and grow their businesses in a supportive environment designed for success.
+            Join vibrant co-working community Strijp-CS in the heart of design and creativity of Eindhoven Strijp-S. 
           </p>
         </div>
 
@@ -69,19 +68,19 @@ const CoWorkingSection = () => {
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           <div className="md:col-span-2">
             <img 
-              src="/lovable-uploads/5302e45b-1982-477b-9632-bf35dd997796.png"
+              src="/lovable-uploads/keuken_bar1.jpg"
               alt="Co-working space atmosphere"
               className="w-full h-80 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             />
           </div>
           <div className="space-y-6">
             <img 
-              src="/lovable-uploads/b1b5869c-0fa2-4bea-81ee-a0707ac5e33b.png"
+              src="/lovable-uploads/220725_Branding_LaurineSimkens_079.jpg"
               alt="Networking and collaboration"
               className="w-full h-36 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             />
             <img 
-              src="/lovable-uploads/345d1852-a0eb-4e0e-a530-0e3a4a1e7c27.png"
+              src="/lovable-uploads/dakterras1.jpg"
               alt="Team meeting space"
               className="w-full h-36 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             />
@@ -173,21 +172,21 @@ const CoWorkingSection = () => {
                   </div>
                 </div>
               </div>
-              {/*<div>
-                <Button 
+              <div>
+                {/*<Button 
                   size="lg" 
                   className="w-full bg-orange-500 hover:bg-orange-600 text-white mb-4"
                 >
-                  Schedule a Tour
-                </Button>
+                  Join a free day!
+                </Button>*/}
                 <Button 
-                  variant="outline" 
+                  onClick={() => window.location.href = 'https://www.strijpcs.nl/en/free-trial/'}
                   size="lg" 
-                  className="w-full border-orange-500 text-orange-600 hover:bg-orange-50"
+                  className="w-full bg-orange-500 text-white hover:bg-orange-600"
                 >
-                  Book a Day Pass
+                  Join a free day!
                 </Button>
-              </div>*/}
+              </div>
             </div>
           </CardContent>
         </Card>

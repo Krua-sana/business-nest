@@ -35,7 +35,7 @@ const JourneySection = () => {
     {
       name: "Join the Community",
       features: ["Eindhoven Entrepreneurs", "Support of like-minded people", "Events calendar", "Free workshops", "Regular networking"],
-      href: "https://chat.whatsapp.com/JhUPSrzHIk92iCm4kzdsRL",                 // internal route example
+      href: "https://forms.gle/UFxsHrAeHNRuXAN17",                 // internal route example
       cta: "Join Community"
     },
     {

@@ -252,7 +252,7 @@ export default function TenSaturdaysPage() {
             {/* Replace the href with your MAINapplication link (form or mailto) */}
             {/*<a href="mailto:team@business-nest.nl?subject=10%20Saturdays%20Application">*/}
               <Button size="lg"
-                onClick={() => window.location.href = 'https://chat.whatsapp.com/JhUPSrzHIk92iCm4kzdsRL'}
+                onClick={() => window.location.href = 'https://forms.gle/UFxsHrAeHNRuXAN17'}
               >
                 Join the Community
                 </Button>

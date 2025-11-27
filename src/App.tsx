@@ -7,8 +7,12 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import TenSaturdays from "./pages/TenSaturdays";
 import TenSaturdaysSpouses from "./pages/TenSaturdays-spouses";
-import ExpertsPage from "./pages/Expertspage";
+import ExpertsPage from "./pages/ExpertsPage";
 import ApplicationForm from "./pages/ApplicationForm";
+import Workshops from "./pages/Workshops";
+import QualityAssuranceWorkshop from "./pages/workshops/QualityAssuranceWorkshop";
+import AICoCreatorWorkshop from "./pages/workshops/AICoCreatorWorkshop";
+
 
 
 
@@ -29,6 +33,10 @@ const App = () => (
           <Route path="/program-spouses" element={<TenSaturdaysSpouses />} />
           <Route path="/experts" element={<ExpertsPage />} />
           <Route path="/apply" element={<ApplicationForm />} />
+          <Route path="/workshops" element={<Workshops />} />
+          <Route path="/workshops/quality-assurance-ai" element={<QualityAssuranceWorkshop />}/>
+          <Route path="/workshops/ai-co-creator" element={<AICoCreatorWorkshop />}/>
+
 
 
         </Routes>

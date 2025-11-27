@@ -1,13 +1,14 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import JoinNestForm from './JoinNestForm';
+import { useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +26,11 @@ const Navigation = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const goToWorkshops = () => {
+    navigate('/workshops');
+    setIsMobileMenuOpen(false);
+  };
+
   const handleJoinClick = () => {
     setIsFormOpen(true);
     setIsMobileMenuOpen(false);
@@ -32,59 +38,75 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-      }`}>
-
+      <nav
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        }`}
+      >
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
+            {/* Logo */}
             <div className="flex items-center space-x-2">
               <a href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'black' }}>
-                <img src="/lovable-uploads/nest_logo.svg" alt="The Business Nest logo"></img>
-                {/* <span className="text-white font-bold text-lg">🥚</span> */}
-              </div>
-              <span className="text-2xl font-bold text-gray-800">Business Nest</span></a>
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: 'black' }}
+                >
+                  <img
+                    src="/lovable-uploads/nest_logo.svg"
+                    alt="The Business Nest logo"
+                  />
+                </div>
+                <span className="text-2xl font-bold text-gray-800">
+                  Business Nest
+                </span>
+              </a>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              <button 
+              <button
                 onClick={() => scrollToSection('journey')}
                 className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
                 Journey
               </button>
-              <button 
+
+              <button
                 onClick={() => scrollToSection('program')}
                 className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
                 Program
               </button>
-              <button 
+
+              {/* ⭐ NEW WORKSHOPS BUTTON */}
+              <button
+                onClick={goToWorkshops}
+                className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+              >
+                Workshops
+              </button>
+
+              <button
                 onClick={() => scrollToSection('experts')}
                 className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
                 Experts
               </button>
-              <button 
+
+              <button
                 onClick={() => scrollToSection('coworking')}
                 className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
                 Co-Working
               </button>
-              <button 
+
+              <button
                 onClick={() => scrollToSection('about')}
                 className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
                 About
               </button>
-              {/*<Button 
-                className="bg-orange-500 hover:bg-black-600 text-white" 
-                onClick={handleJoinClick}
-              >
-                Join The Nest
-              </Button>*/}
             </div>
 
             {/* Mobile Menu Button */}
@@ -100,36 +122,41 @@ const Navigation = () => {
           {isMobileMenuOpen && (
             <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg">
               <div className="flex flex-col space-y-4 px-4">
-                <button 
+                <button
                   onClick={() => scrollToSection('program')}
                   className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
                 >
                   Program
                 </button>
-                <button 
+
+                {/* ⭐ NEW WORKSHOPS BUTTON (MOBILE) */}
+                <button
+                  onClick={goToWorkshops}
+                  className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
+                >
+                  Workshops
+                </button>
+
+                <button
                   onClick={() => scrollToSection('experts')}
                   className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
                 >
                   Experts
                 </button>
-                <button 
+
+                <button
                   onClick={() => scrollToSection('coworking')}
                   className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
                 >
                   Co-Working
                 </button>
-                <button 
+
+                <button
                   onClick={() => scrollToSection('about')}
                   className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
                 >
                   About
                 </button>
-                {/*<Button 
-                  className="bg-orange-500 hover:bg-orange-600 text-white"
-                  onClick={handleJoinClick}
-                >
-                  Join The Nest
-                </Button>*/}
               </div>
             </div>
           )}

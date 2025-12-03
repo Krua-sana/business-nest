@@ -94,7 +94,7 @@ export default function TenSaturdaysPage() {
             </div>
           </div>
           <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow">
-            {/* Place your image into /public/images/hero.jpg or update the src below */}
+            {/* Place your image into /images/hero.jpg or update the src below */}
             <img
               src="/lovable-uploads/co-create_with_experts.png"
               alt="Business Nest 10 Saturdays program"

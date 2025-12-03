@@ -43,7 +43,7 @@ export default function QualityAssuranceWorkshop() {
           {/* RIGHT IMAGE */}
           <div className="w-full h-80 md:h-full bg-gray-700 rounded-xl shadow-lg overflow-hidden">
             <img
-              src="/images/ai-quality-assurance.jpg" // add your image in /public/images
+              src="/images/ai-quality-assurance.jpg" // add your image in /images
               alt="AI Quality Assurance Workshop"
               className="w-full h-full object-cover"
             />

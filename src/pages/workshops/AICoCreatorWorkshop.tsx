@@ -68,22 +68,22 @@ const AICoCreatorWorkshop = () => {
               {
                 title: "Discover",
                 text: "Identify a business idea that fits your strengths and goals.",
-                img: "/public/images/Discover.png",
+                img: "/images/Discover.png",
               },
               {
                 title: "Define",
                 text: "Shape your MVP using structured AI-assisted thinking.",
-                img: "/public/images/Define.png",
+                img: "/images/Define.png",
               },
               {
                 title: "Build",
                 text: "Create your first prototype in under 60 minutes using AI.",
-                img: "/public/images/Build.png",
+                img: "/images/Build.png",
               },
               {
                 title: "Pitch",
                 text: "Present your concept confidently to a supportive group.",
-                img: "/public/images/Pitch.png",
+                img: "/images/Pitch.png",
               },
             ].map((item, i) => (
               <Card key={i} className="border-none shadow-none bg-transparent text-center">
@@ -108,17 +108,17 @@ const AICoCreatorWorkshop = () => {
               {
                 name: "Lara Kasapoglu",
                 text: "In just 10 minutes, AI helped us design a full concept for a food delivery app!",
-                img: "/public/images/testimonial1.jpeg",
+                img: "/images/testimonial1.jpeg",
               },
               {
                 name: "Serhat Altin",
                 text: "Great energy, fast learning, and very practical!",
-                img: "/public/images/testimonial2.jpeg",
+                img: "/images/testimonial2.jpeg",
               },
               {
                 name: "Simeon Dimov",
                 text: "We ended with a fully functional prototype — impressive.",
-                img: "/public/images/testimonial3.jpeg",
+                img: "/images/testimonial3.jpeg",
               },
             ].map((t, i) => (
               <Card key={i} className="p-6">
@@ -170,13 +170,13 @@ const AICoCreatorWorkshop = () => {
             {[
               {
                 name: "Kateryna Saprunova",
-                img: "/public/images/moderator-kateryna.jpg",
+                img: "/images/moderator-kateryna.jpg",
                 text: "Sr. UX/UI Designer & Front-end Developer with extensive workshop facilitation experience.",
                 linkedin: "https://www.linkedin.com/in/saprunova-kateryna/",
               },
               {
                 name: "Kris Smirnova",
-                img: "/public/images/moderator-kris.JPEG",
+                img: "/images/moderator-kris.JPEG",
                 text: "UX/CX Researcher and AI facilitator bringing data-driven insights to innovation.",
                 linkedin: "https://www.linkedin.com/in/krissmir/",
               },
@@ -219,7 +219,7 @@ const AICoCreatorWorkshop = () => {
             ].map((img, i) => (
               <img
                 key={i}
-                src={`/public/images/${img}`}
+                src={`/images/${img}`}
                 className="rounded-lg shadow-md object-cover w-full h-48"
               />
             ))}

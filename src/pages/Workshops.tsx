@@ -45,7 +45,7 @@ export default function Workshops() {
           {/* RIGHT – IMAGE */}
           <div className="w-full h-80 md:h-full bg-gray-300 rounded-xl overflow-hidden shadow-lg">
             <img
-              src="/public/images/ai-workshop-cover.gif" // Update with your image path
+              src="/images/ai-workshop-cover.gif" // Update with your image path
               alt="AI Workshop"
               className="w-full h-full object-cover"
             />

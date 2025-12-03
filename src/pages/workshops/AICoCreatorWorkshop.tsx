@@ -176,7 +176,7 @@ const AICoCreatorWorkshop = () => {
               },
               {
                 name: "Kris Smirnova",
-                img: "/images/moderator-kris.JPEG",
+                img: "/images/moderator-kris.jpeg",
                 text: "UX/CX Researcher and AI facilitator bringing data-driven insights to innovation.",
                 linkedin: "https://www.linkedin.com/in/krissmir/",
               },

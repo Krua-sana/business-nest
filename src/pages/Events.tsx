@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Calendar, MapPin, User, Sparkles, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function Workshops() {
+export default function Events() {
   return (
     <>
       <Navigation />
@@ -15,7 +15,7 @@ export default function Workshops() {
           {/* LEFT – WORKSHOP DETAILS */}
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Upcoming Workshop: <span className="text-orange-600">AI as a Co-Creator</span>
+              Upcoming Events: <span className="text-orange-600">AI as a Co-Creator</span>
             </h1>
 
             <ul className="space-y-4 text-gray-700 text-lg">
@@ -56,13 +56,13 @@ export default function Workshops() {
       {/* WORKSHOP GRID */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto text-center mb-14">
-          <h2 className="text-3xl font-bold text-gray-800">Upcoming Workshops</h2>
+          <h2 className="text-3xl font-bold text-gray-800">Upcoming Events</h2>
           <p className="text-gray-600 mt-2">Explore our expert-led sessions</p>
         </div>
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
           {/* Tile 1 */}
-          <Link to="/workshops/ai-co-creator">
+          <Link to="/events/ai-co-creator">
             <div className="bg-gray-50 border rounded-xl p-6 hover:-translate-y-2 hover:shadow-lg transition-all cursor-pointer">
               <img
                 src="/images/ai-workshop-cover.gif"
@@ -72,14 +72,14 @@ export default function Workshops() {
               <p className="text-gray-600 text-sm mt-2">Full-day creativity + AI practice</p>
             </div>
           </Link>
-          <Link to="/workshops/quality-assurance-ai">
+          <Link to="/events/quality-assurance-ai">
             <div className="bg-gray-50 border rounded-xl p-6 hover:-translate-y-2 hover:shadow-lg transition-all cursor-pointer">
               <img
-                src="/images/QA-for-AI-dev.png"
+                src="/images/QA_160126.png"
                 className="rounded-md mb-4"
               />
               <h3 className="text-xl font-bold text-gray-800">QA for the AI dev products</h3>
-              <p className="text-gray-600 text-sm mt-2">Coming soon</p>
+              <p className="text-gray-600 text-sm mt-2">StrijCS 16 January 2026 | 19:00-21:00</p>
             </div>
           </Link>
 
@@ -124,7 +124,7 @@ export default function Workshops() {
           
           <div>
             <div className="text-4xl font-bold">7</div>
-            <div className="text-gray-300 mt-2">Workshops Hosted</div>
+            <div className="text-gray-300 mt-2">Events Hosted</div>
           </div>
 
           <div>

@@ -9,9 +9,9 @@ import TenSaturdays from "./pages/TenSaturdays";
 import TenSaturdaysSpouses from "./pages/TenSaturdays-spouses";
 import ExpertsPage from "./pages/ExpertsPage";
 import ApplicationForm from "./pages/ApplicationForm";
-import Workshops from "./pages/Workshops";
-import QualityAssuranceWorkshop from "./pages/workshops/QualityAssuranceWorkshop";
-import AICoCreatorWorkshop from "./pages/workshops/AICoCreatorWorkshop";
+import Events from "./pages/Events";
+import QualityAssuranceWorkshop from "./pages/events/QualityAssuranceWorkshop";
+import AICoCreatorWorkshop from "./pages/events/AICoCreatorWorkshop";
 
 
 
@@ -33,9 +33,9 @@ const App = () => (
           <Route path="/program-spouses" element={<TenSaturdaysSpouses />} />
           <Route path="/experts" element={<ExpertsPage />} />
           <Route path="/apply" element={<ApplicationForm />} />
-          <Route path="/workshops" element={<Workshops />} />
-          <Route path="/workshops/quality-assurance-ai" element={<QualityAssuranceWorkshop />}/>
-          <Route path="/workshops/ai-co-creator" element={<AICoCreatorWorkshop />}/>
+          <Route path="/events" element={<Events />} />
+          <Route path="/events/quality-assurance-ai" element={<QualityAssuranceWorkshop />}/>
+          <Route path="/events/ai-co-creator" element={<AICoCreatorWorkshop />}/>
 
 
 

@@ -26,8 +26,8 @@ const Navigation = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const goToWorkshops = () => {
-    navigate('/workshops');
+  const goToEvents = () => {
+    navigate('/events');
     setIsMobileMenuOpen(false);
   };
 
@@ -81,10 +81,10 @@ const Navigation = () => {
 
               {/* ⭐ NEW WORKSHOPS BUTTON */}
               <button
-                onClick={goToWorkshops}
+                onClick={goToEvents}
                 className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
-                Workshops
+                Events
               </button>
 
               <button
@@ -131,10 +131,10 @@ const Navigation = () => {
 
                 {/* ⭐ NEW WORKSHOPS BUTTON (MOBILE) */}
                 <button
-                  onClick={goToWorkshops}
+                  onClick={goToEvents}
                   className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
                 >
-                  Workshops
+                  Events
                 </button>
 
                 <button

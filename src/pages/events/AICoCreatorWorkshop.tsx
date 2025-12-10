@@ -31,7 +31,7 @@ const AICoCreatorWorkshop = () => {
 
               <div className="flex items-center gap-3">
                 <Calendar className="text-orange-400" />
-                <span>Date: 13 December 2026</span>
+                <span>Date: 13 December 2025</span>
               </div>
 
               <div className="flex items-center gap-3">
@@ -151,9 +151,9 @@ const AICoCreatorWorkshop = () => {
               "15:30 – Pitch preparation",
               "16:00 – Pitch & feedback",
               "16:45 – Networking",
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">{i + 1}.</span>
+            ].map((item) => (
+              <li className="flex items-start gap-3">
+                
                 {item}
               </li>
             ))}
@@ -166,7 +166,7 @@ const AICoCreatorWorkshop = () => {
         <div className="container mx-auto px-6 lg:px-20">
           <h2 className="text-4xl font-bold text-center mb-12">Moderators</h2>
 
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-3 gap-10">
             {[
               {
                 name: "Kateryna Saprunova",
@@ -180,6 +180,12 @@ const AICoCreatorWorkshop = () => {
                 text: "UX/CX Researcher and AI facilitator bringing data-driven insights to innovation.",
                 linkedin: "https://www.linkedin.com/in/krissmir/",
               },
+              {
+                name: "Simeon Dimov",
+                img: "/images/experts/Simeon-Dimov.jpg",
+                text: "Co-Founder of Synthgen, synthetic AI data. Full-stack developer and AI mentor.",
+                linkedin: "https://www.linkedin.com/in/simeon-dimov-bb429016b/",
+              }
             ].map((m, i) => (
               <Card key={i} className="p-6 text-center">
                 <img
@@ -208,6 +214,14 @@ const AICoCreatorWorkshop = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
+              "g9.jpeg",
+              "g10.jpeg",
+              "g11.jpeg",
+              "g12.jpeg",
+              "g13.jpeg",
+              "g14.jpeg",
+              "g15.jpeg",
+              "g16.jpeg",
               "g1.jpeg",
               "g2.jpeg",
               "g3.jpeg",

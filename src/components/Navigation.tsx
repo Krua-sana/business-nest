@@ -31,6 +31,11 @@ const Navigation = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const goToExperts = () => {
+    navigate('/experts');
+    setIsMobileMenuOpen(false);
+  };
+
   const handleJoinClick = () => {
     setIsFormOpen(true);
     setIsMobileMenuOpen(false);
@@ -88,7 +93,7 @@ const Navigation = () => {
               </button>
 
               <button
-                onClick={() => scrollToSection('experts')}
+                onClick={goToExperts}
                 className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
                 Experts

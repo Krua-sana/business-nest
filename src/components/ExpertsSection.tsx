@@ -48,7 +48,7 @@ const ExpertsSection = () => {
       role: "AI Mentor and Tech Strategist",
       expertise: "AI Product Development",
       bio: "Serial entrepreneur and CTO with 3 successful exits in the tech industry",
-      image: "/lovable-uploads/Simeon-Dimov.jpg",
+      image: "/images/experts/Simeon-Dimov.jpg",
       social: {
         linkedin: "https://www.linkedin.com/in/simeon-dimov-bb429016b/",
         twitter: "#",

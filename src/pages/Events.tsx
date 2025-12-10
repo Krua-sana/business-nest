@@ -8,7 +8,7 @@ const Events = () => {
   const events = [
     {
       title: "AI as a Co-Creator",
-      date: "13 December 2026",
+      date: "13 December 2025",
       location: "Microlab, Eindhoven",
       link: "/events/ai-co-creator",
       img: "/images/ai-workshop-cover.gif",

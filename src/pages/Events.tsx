@@ -1,14 +1,33 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Calendar, MapPin, User, Sparkles, DollarSign } from "lucide-react";
+import { Card, CardContent} from "@/components/ui/card";
+import { Calendar, Users, MapPin, Sparkles, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function Events() {
+const Events = () => {
+  const events = [
+    {
+      title: "AI as a Co-Creator",
+      date: "13 December 2026",
+      location: "Microlab, Eindhoven",
+      link: "/events/ai-co-creator",
+      img: "/images/ai-workshop-cover.gif",
+    },
+    {
+      title: "Quality Assurance for AI",
+      date: "16 January 2026",
+      location: "Business Nest",
+      link: "/events/quality-assurance-ai",
+      img: "/images/QA_160126.png",
+    },
+    // Add more events here
+  ];
+
   return (
-    <>
+    <div className="bg-white text-gray-800">
       <Navigation />
 
-      {/* HERO SECTION */}
+       {/* HERO SECTION */}
       <section className="bg-gray-50 py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
@@ -53,99 +72,63 @@ export default function Events() {
         </div>
       </section>
 
-      {/* WORKSHOP GRID */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-6xl mx-auto text-center mb-14">
-          <h2 className="text-3xl font-bold text-gray-800">Upcoming Events</h2>
-          <p className="text-gray-600 mt-2">Explore our expert-led sessions</p>
-        </div>
+      {/* MAIN CONTENT WITH SIDEBAR */}
+      <section className="py-20">
+        <div className="container mx-auto px-6 lg:px-20 grid md:grid-cols-3 gap-10">
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
-          {/* Tile 1 */}
-          <Link to="/events/ai-co-creator">
-            <div className="bg-gray-50 border rounded-xl p-6 hover:-translate-y-2 hover:shadow-lg transition-all cursor-pointer">
-              <img
-                src="/images/ai-workshop-cover.gif"
-                className="rounded-md mb-4"
-              />
-              <h3 className="text-xl font-bold text-gray-800">AI as a Co-Creator</h3>
-              <p className="text-gray-600 text-sm mt-2">Full-day creativity + AI practice</p>
+          {/* LEFT COLUMN — EVENT CARDS */}
+          <div className="md:col-span-2 space-y-10">
+            <div className="grid sm:grid-cols-2 gap-10">
+              {events.map((event, index) => (
+                <Link to={event.link} key={index}>
+                  <Card className="hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                    <CardContent className="p-0">
+                      <img
+                        src={event.img}
+                        alt={event.title}
+                        className="rounded-t-lg w-full h-48 object-cover"
+                      />
+                      <div className="p-6">
+                        <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
+
+                        <div className="flex items-center gap-2 text-gray-600 text-sm mb-1">
+                          <Calendar size={18} className="text-orange-500" />
+                          <span>{event.date}</span>
+                        </div>
+
+                        <div className="flex items-center gap-2 text-gray-600 text-sm">
+                          <MapPin size={18} className="text-orange-500" />
+                          <span>{event.location}</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
             </div>
-          </Link>
-          <Link to="/events/quality-assurance-ai">
-            <div className="bg-gray-50 border rounded-xl p-6 hover:-translate-y-2 hover:shadow-lg transition-all cursor-pointer">
-              <img
-                src="/images/QA_160126.png"
-                className="rounded-md mb-4"
-              />
-              <h3 className="text-xl font-bold text-gray-800">QA for the AI dev products</h3>
-              <p className="text-gray-600 text-sm mt-2">StrijCS 16 January 2026 | 19:00-21:00</p>
+          </div>
+
+          {/* RIGHT COLUMN — GOOGLE CALENDAR */}
+          <aside className="md:col-span-1">
+            <div className="sticky top-32">
+              <h3 className="text-xl font-bold mb-4">Event Calendar</h3>
+
+              <iframe
+                src="https://calendar.google.com/calendar/embed?src=c35502fa34cdda9f4096fe13564179c4d98196c5f2d751a66995280476e537b9%40group.calendar.google.com&ctz=UTC"
+                style={{ border: 0 }}
+                className="w-full h-[600px] rounded-lg shadow-md"
+                frameBorder="0"
+                scrolling="no"
+              ></iframe>
             </div>
-          </Link>
-
-          {/* Placeholder tiles for future workshops 
-          {[1,2,3,4,5].map((i) => (
-            <div
-              key={i}
-              className="bg-gray-50 border rounded-xl p-6 opacity-60 cursor-not-allowed"
-            >
-              <div className="w-full h-40 bg-gray-200 rounded-md mb-4"></div>
-              <h3 className="text-xl font-bold text-gray-800">Coming Soon</h3>
-              <p className="text-gray-600 text-sm mt-2">New workshops are in preparation</p>
-            </div>
-          ))}*/}
-        </div>
-      </section>
-
-      {/* SUBMIT WORKSHOP CTA 
-      <section className="py-20 px-6 bg-orange-50">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Want to Host Your Workshop?
-          </h2>
-          <p className="text-gray-700 mb-8">
-            Do you have an idea or expertise that can help our community?
-          </p>
-
-          <a
-            href="https://forms.gle/your-google-form"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition"
-          >
-            Submit Your Workshop Idea
-          </a>
-        </div>
-      </section>*/}
-
-      {/* CORE VALUES (STATISTICS) */}
-      <section className="py-20 px-6 bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-center">
-          
-          <div>
-            <div className="text-4xl font-bold">7</div>
-            <div className="text-gray-300 mt-2">Events Hosted</div>
-          </div>
-
-          <div>
-            <div className="text-4xl font-bold">230</div>
-            <div className="text-gray-300 mt-2">Participants</div>
-          </div>
-
-          <div>
-            <div className="text-4xl font-bold">450+</div>
-            <div className="text-gray-300 mt-2">Community Members</div>
-          </div>
-
-          <div>
-            <div className="text-4xl font-bold">4.7 ★</div>
-            <div className="text-gray-300 mt-2">Meetup Rating</div>
-          </div>
+          </aside>
 
         </div>
       </section>
 
       <Footer />
-    </>
+    </div>
   );
-}
+};
+
+export default Events;

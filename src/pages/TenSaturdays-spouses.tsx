@@ -58,7 +58,7 @@ const sessions = [
 
 
 
-export default function TenSaturdaysPage() {
+export default function TenSaturdaysSpouses() {
   const [expanded, setExpanded] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
 
@@ -210,17 +210,6 @@ const experts = [
 
       {/* Checklist */}
       <section className="bg-gray-50 px-20 py-20 relative">
-        {/*<div>
-          <h2 className="text-2xl font-semibold mb-6">What you’ll get out of this program</h2>
-          <ul className="space-y-5 text-gray-700">
-            <li>✅ Develop your <strong>AI-supported business design process</strong> using the 4D Framework (Delegation, Description, Discernment, Diligence).</li>
-            <li>✅ Apply <strong>AI-powered tools</strong> for market research, concept generation, and insight development.</li>
-            <li>✅ Judge <strong>AI quality and accuracy</strong> through validation and ethical verification.</li>
-            <li>✅ Demonstrate <strong>AI diligence and transparency</strong> by disclosing your use and validation process.</li>
-            <li>✅ Develop your personal <strong>AI Playbook</strong> for entrepreneurship — experiment across ChatGPT, Claude, Gemini, Canva, and more.</li>
-          </ul>
-        </div>*/}
-        
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             What you’ll get out of this program

@@ -25,7 +25,10 @@ const Navigation = () => {
     }
     setIsMobileMenuOpen(false);
   };
-
+  const goToProgram = () => {
+    navigate('/program');
+    setIsMobileMenuOpen(false);
+  };
   const goToEvents = () => {
     navigate('/events');
     setIsMobileMenuOpen(false);
@@ -78,7 +81,7 @@ const Navigation = () => {
               </button>
 
               <button
-                onClick={() => scrollToSection('program')}
+                onClick={goToProgram}
                 className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
                 Program
@@ -128,7 +131,7 @@ const Navigation = () => {
             <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg">
               <div className="flex flex-col space-y-4 px-4">
                 <button
-                  onClick={() => scrollToSection('program')}
+                  onClick={goToProgram}
                   className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
                 >
                   Program
@@ -143,7 +146,7 @@ const Navigation = () => {
                 </button>
 
                 <button
-                  onClick={() => scrollToSection('experts')}
+                  onClick={goToExperts}
                   className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
                 >
                   Experts

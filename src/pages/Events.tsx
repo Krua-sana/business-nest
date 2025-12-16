@@ -34,13 +34,14 @@ const Events = () => {
           {/* LEFT – WORKSHOP DETAILS */}
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Upcoming Events: <span className="text-orange-600">AI as a Co-Creator</span>
+              Upcoming Events: <span className="text-orange-600">QA Approach
+for AI-Based Apps</span>
             </h1>
 
             <ul className="space-y-4 text-gray-700 text-lg">
               <li className="flex items-center gap-3">
                 <Sparkles className="text-orange-500 w-6 h-6" />
-                Topic: AI as your creative and strategic partner
+                Topic: Building Trust and Reliability in Your AI Applications.
               </li>
               {/*<li className="flex items-center gap-3">
                 <User className="text-orange-500 w-6 h-6" />
@@ -48,23 +49,23 @@ const Events = () => {
               </li>*/}
               <li className="flex items-center gap-3">
                 <Calendar className="text-orange-500 w-6 h-6" />
-                Date & Time: 13 December, Saturday, 13:00–17:00
+                Date & Time: 16 January 2026, 19:00–21:00
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="text-orange-500 w-6 h-6" />
-                Location: Microlab, Eindhoven
+                Location: StrijpCS, Eindhoven
               </li>
-              <li className="flex items-center gap-3">
+              {/*<li className="flex items-center gap-3">
                 <DollarSign className="text-orange-500 w-6 h-6" />
                 Price: €27,50 (drinks & snacks included)
-              </li>
+              </li>*/}
             </ul>
           </div>
 
           {/* RIGHT – IMAGE */}
           <div className="w-full h-80 md:h-full bg-gray-300 rounded-xl overflow-hidden shadow-lg">
             <img
-              src="/images/ai-workshop-cover.gif" // Update with your image path
+              src="/images/QA_160126.png" // Update with your image path
               alt="AI Workshop"
               className="w-full h-full object-cover"
             />

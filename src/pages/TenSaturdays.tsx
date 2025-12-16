@@ -217,7 +217,6 @@ const experts = [
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             From idea to launch, we provide everything you need to build a successful business. 
-            Our comprehensive program is designed specifically for migrants spouses first-time founders.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
@@ -435,7 +434,7 @@ const experts = [
               <div className="text-2xl">Start at 7 March 2026</div>
               <div className="text-xl text-gray-600 text-muted-foreground">Tailored for tech professionals and specialists in transition — whether after a layoff or alongside your current job.</div>
               <ul className="mt-4 mb-4 space-y-2 text-sm">
-                <li className="flex items-center gap-3"><Users /> Program for immigrant spouses</li>
+                <li className="flex items-center gap-3"><Users /> Program for expats</li>
                 <li className="flex items-center gap-3"><Award /> Special price €1000 (excl.VAT)</li>
                 <li className="flex items-center gap-3"><Calendar /> 10 Saturdays • 10–15 participants</li>
                 <li className="flex items-center gap-3"><MessageSquare /> Experts consultancy (Saturdays & open hours)</li>
@@ -487,7 +486,7 @@ const experts = [
       {/* CTA */}
       <section className="py-20 bg-gradient-to-b from-orange-50 to-amber-50 relative ">
               <div className="bg-card rounded-2xl border p-8 md:p-12 text-center mx-auto max-w-6xl px-4 py-16 ">
-                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Not ready?</h2>
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Need time to think?</h2>
                 <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
                   Join our Eindhoven Entrepreneurs community — explore, connect, and get inspired!
                 </p>

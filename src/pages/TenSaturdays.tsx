@@ -192,9 +192,6 @@ const experts = [
                     <a href="#apply">
                       <Button size="lg">Apply for the Program</Button>
                     </a>
-                    {/*<a href="#program-outline">
-                      <Button variant="outline" size="lg">See the Schedule</Button>
-                    </a>*/}
                   </div>
                 </div>
                 <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow">

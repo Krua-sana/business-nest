@@ -192,9 +192,9 @@ const experts = [
                     <a href="#apply">
                       <Button size="lg">Apply for the Program</Button>
                     </a>
-                    {/*<a href="#program-outline">
+                    <a href="#program-outline">
                       <Button variant="outline" size="lg">See the Schedule</Button>
-                    </a>*/}
+                    </a>
                   </div>
                 </div>
                 <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow">
@@ -286,48 +286,80 @@ const experts = [
         </div>
       </section>
 
-   {/* Pricing */}
-      <section id="apply" className="mx-auto max-w-6xl px-4 py-16">
-        <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                It is the Program <span className="text-orange-600"> for You</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Free access to community. Privat group with the materials. Ten themed Saturdays. Hands-on exercises, expert open Q&A hours, and peer reviews in each session.
-          </p>
+ 
+ {/* Course Syllabus */}
+<section className="bg-gray-50 py-16 px-6">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            Program syllabus
+          </h2>
+          <p className="text-gray-600">
+          10 live offline Saturday sessions • 9 lessons • 8 hours each
+        </p>
         </div>
-        
-        <div className="mt-8 grid md:grid-cols-1 gap-6">
+    <div className="flex justify-between items-center mb-8">
       
-          <Card className="border-primary/30">
-            <CardHeader>
-              <CardTitle className="text-4xl font-bold">Flight Path</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="text-2xl">Start at 21 March 2026</div>
-              <div className="text-xl text-gray-600 text-muted-foreground">Tailored for tech professionals and specialists in transition — whether after a layoff or alongside your current job.</div>
-              <ul className="mt-4 mb-4 space-y-2 text-sm">
-                <li className="flex items-center gap-3"><Users /> Program in english</li>
-                <li className="flex items-center gap-3"><Award /> Special price €967 (excl.VAT)</li>
-                <li className="flex items-center gap-3"><Calendar /> 10 Saturdays • 10–15 participants</li>
-                <li className="flex items-center gap-3"><MessageSquare /> Experts consultancy (Saturdays & open hours)</li>
-                <li className="flex items-center gap-3"><FileText /> Digital & printed materials</li>
-                <li className="flex items-center gap-3"><BookOpen /> Private community group</li>
-                <li className="flex items-center gap-3"><Coffee /> Drinks and snacks during 9 sessions day</li>
-                <li className="flex items-center gap-3"><PartyPopper /> Drinks on the Pitch day</li>
+      <button
+        onClick={() => setShowAll(!showAll)}
+        className="text-sm font-medium text-blue-600 hover:underline"
+      >
+        {showAll ? "Collapse all modules" : "Expand all modules"}
+      </button>
+    </div>
+
+    <div className="space-y-4">
+      {visibleModules.map((mod, i) => (
+        <div
+          key={i}
+          className="border rounded-lg overflow-hidden shadow-sm bg-white"
+        >
+         {/* Accordion Header */} 
+          <button
+            className="w-full flex items-center justify-between px-6 py-4 text-left font-semibold hover:bg-gray-100"
+            onClick={() => toggleModule(i)}
+          >
+            <div className="flex items-center gap-4">
+              {/* 📅 Date Badge */}
+              <div className="w-14 h-14 rounded-lg border bg-white flex flex-col items-center justify-center shadow-sm">
+                <span className="text-xs uppercase text-gray-500 font-medium leading-none">
+                  {mod.month}
+                </span>
+                <span className="text-xl font-bold text-gray-800 leading-none">
+                  {mod.day}
+                </span>
+              </div>
+
+              {/* Title + Subtitle */}
+              <div>
+                <div className="text-lg font-semibold">{mod.title}</div>
+                <div className="text-sm text-gray-500">{mod.subtitle}</div>
+              </div>
+            </div>
+
+            {expanded === i ? (
+              <ChevronUp className="text-gray-400" />
+            ) : (
+              <ChevronDown className="text-gray-400" />
+            )}
+          </button>
+
+          {/* Accordion Body */}
+          {expanded === i && (
+            <div className="px-8 pb-4 text-gray-700">
+              <ul className="list-disc pl-6 space-y-1">
+                {mod.topics.map((topic, j) => (
+                  <li key={j}>{topic}</li>
+                ))}
               </ul>
-              <Button size="lg"
-                            onClick={() => window.location.href = 'https://forms.gle/3wNJf2ChEezUZYnFA'}
-                            className="mt-4 w-full">Application Form</Button>
-              
-              {/* <a href="https://forms.gle/kqNpAbwZvFrQK25n9" target="_blank" rel="noopener noreferrer" className="mt-4 inline-block">
-                      <Button variant="outline" size="lg">Learn more</Button>
-               </a> */}
-            </CardContent>
-          </Card>
-      
+              <p className="mt-3 text-sm text-gray-500">Lunch included 🍽️</p>
+            </div>
+          )}
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Experts Grid */}
             <section className="mx-auto max-w-6xl px-4 py-16">
@@ -381,6 +413,46 @@ const experts = [
               </div>
             </section>
 
+
+      {/* Pricing */}
+      <section id="apply" className="mx-auto max-w-6xl px-4 py-16">
+        <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                It is the Program <span className="text-orange-600"> for You</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Free access to community. Privat group with the materials. Ten themed Saturdays. Hands-on exercises, expert open Q&A hours, and peer reviews in each session.
+          </p>
+        </div>
+        
+        <div className="mt-8 grid md:grid-cols-1 gap-6">
+      
+          <Card className="border-primary/30">
+            <CardHeader>
+              <CardTitle className="text-4xl font-bold">Flight Path</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="text-2xl">Start at 21 March 2026</div>
+              <div className="text-xl text-gray-600 text-muted-foreground">Tailored for tech professionals and specialists in transition — whether after a layoff or alongside your current job.</div>
+              <ul className="mt-4 mb-4 space-y-2 text-sm">
+                <li className="flex items-center gap-3"><Users /> Program for expats</li>
+                <li className="flex items-center gap-3"><Award /> Special price €967 (excl.VAT)</li>
+                <li className="flex items-center gap-3"><Calendar /> 10 Saturdays • 10–15 participants</li>
+                <li className="flex items-center gap-3"><MessageSquare /> Experts consultancy (Saturdays & open hours)</li>
+                <li className="flex items-center gap-3"><FileText /> Digital & printed materials</li>
+                <li className="flex items-center gap-3"><BookOpen /> Private community group</li>
+                <li className="flex items-center gap-3"><Coffee /> Drinks and snacks during 9 sessions day</li>
+                <li className="flex items-center gap-3"><PartyPopper /> Drinks on the Pitch day</li>
+              </ul>
+              <a href="#apply"><Button 
+                            onClick={() => window.location.href = 'https://forms.gle/3wNJf2ChEezUZYnFA'}
+                            className="mt-4 w-full">Apply for Program</Button></a>
+            </CardContent>
+          </Card>
+      
+        </div>
+      </section>
+
       {/* Testimonials 
       <section className="mx-auto max-w-6xl px-4 py-16">
         <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">What founders say</h2>
@@ -412,7 +484,6 @@ const experts = [
         </div>
       </section>
 */}
-
       {/* CTA */}
       <section className="py-20 bg-gradient-to-b from-orange-50 to-amber-50 relative ">
               <div className="bg-card rounded-2xl border p-8 md:p-12 text-center mx-auto max-w-6xl px-4 py-16 ">

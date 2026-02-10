@@ -326,6 +326,52 @@ const experts = [
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="bg-gray-50 px-40 py-20 relative" style={{ alignItems: 'center' }}>
+        <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    What <span className="text-orange-600"> participants say</span>
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                The testimonials from the participants of the 10 Saturday program. Hear how the program helped them turn their ideas into thriving businesses.
+              </p>
+             </div>
+        
+        <div className="mt-8 grid md:grid-cols-3 gap-6">
+          {[
+            {
+              quote:
+                "It is a well thought-out program with a practical approach for aspiring entrepreneurs using AI as assistant or spare partner. The experts share their valuable expertise and experience.",
+              name: "Upiek Riptoningrum, Founder of UXORES",
+              img: "/images/Upiek Riptoningrum.jpg"
+            },
+            {
+              quote:
+                "Thanks to the 10 Saturdays program, I gained much more structure and clarity in developing my business idea. The practical tools and models helped me understand how to move forward step by step.",
+              name: "Iryna Digtiarova, Public Speaking Coach",
+              img: "/images/Iryna Digtiarova.png"
+            },
+            {
+              quote:
+                "Business Nest is a gateway into a community of like-minded newbies and very experienced and generous experts. Some contacts are for life and others provide valuable snippets of knowledge that will stay with me for life.",
+              name: "Zoe Prifti, Founder of Mermaid sustainable fashion",
+              img: "/images/Zoe Prifti.jpeg"
+            },
+          ].map((t, i) => (
+            <Card key={i} className="h-full">
+              <CardContent className="pt-6">
+                <img
+                  src={t.img}
+                  className="w-20 h-20 rounded-full mx-auto mb-4 border-1 border-white shadow-md object-cover"
+                />
+                <p className="italic">“{t.quote}”</p>
+                <div className="mt-4 text-sm font-medium">{t.name}</div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
       {/* Experts Grid */}
             <section className="mx-auto max-w-6xl px-4 py-16">
               <div className="text-center mb-16">
@@ -378,37 +424,8 @@ const experts = [
               </div>
             </section>
 
-      {/* Testimonials 
-      <section className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">What founders say</h2>
-        <div className="mt-8 grid md:grid-cols-3 gap-6">
-          {[
-            {
-              quote:
-                "The Saturdays gave me momentum. I launched my MVP in week 6 and closed my first paying customer by week 9.",
-              name: "Anita, EdTech founder",
-            },
-            {
-              quote:
-                "Practical, friendly, and focused. The mentors were hands-on and the cohort support was invaluable.",
-              name: "Mark, Food startup",
-            },
-            {
-              quote:
-                "Clarity, structure, and community—exactly what I needed to move from idea to action.",
-              name: "Sara, Wellness app",
-            },
-          ].map((t, i) => (
-            <Card key={i} className="h-full">
-              <CardContent className="pt-6">
-                <p className="italic">“{t.quote}”</p>
-                <div className="mt-4 text-sm font-medium">{t.name}</div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-*/}
+      
+
 
       {/* CTA */}
       <section className="py-20 bg-gradient-to-b from-orange-50 to-amber-50 relative ">

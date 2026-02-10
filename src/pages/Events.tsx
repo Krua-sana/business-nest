@@ -1,4 +1,4 @@
-import Navigation from "@/components/Navigation";
+import ProgramNavigation from "@/components/ProgramNavigation"; // reuse simple nav
 import Footer from "@/components/Footer";
 import { Card, CardContent} from "@/components/ui/card";
 import { Calendar, Users, MapPin, Sparkles, DollarSign } from "lucide-react";
@@ -25,7 +25,7 @@ const Events = () => {
 
   return (
     <div className="bg-white text-gray-800">
-      <Navigation />
+      <ProgramNavigation />
 
        {/* HERO SECTION */}
       <section className="bg-gray-50 py-20 px-6">
@@ -34,14 +34,13 @@ const Events = () => {
           {/* LEFT – WORKSHOP DETAILS */}
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Upcoming Events: <span className="text-orange-600">QA Approach
-for AI-Based Apps</span>
+              Upcoming Events: <span className="text-orange-600">Ditch the Nerves</span>
             </h1>
 
             <ul className="space-y-4 text-gray-700 text-lg">
               <li className="flex items-center gap-3">
                 <Sparkles className="text-orange-500 w-6 h-6" />
-                Topic: Building Trust and Reliability in Your AI Applications.
+                Topic: Confident Presentation Skills For Entrepreneurs.
               </li>
               {/*<li className="flex items-center gap-3">
                 <User className="text-orange-500 w-6 h-6" />
@@ -49,24 +48,24 @@ for AI-Based Apps</span>
               </li>*/}
               <li className="flex items-center gap-3">
                 <Calendar className="text-orange-500 w-6 h-6" />
-                Date & Time: 16 January 2026, 19:00–21:00
+                Date & Time: 7 March 2026, 14:00–17:00
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="text-orange-500 w-6 h-6" />
-                Location: StrijpCS, Eindhoven
+                Location: CKE, Eindhoven
               </li>
-              {/*<li className="flex items-center gap-3">
+              <li className="flex items-center gap-3">
                 <DollarSign className="text-orange-500 w-6 h-6" />
-                Price: €27,50 (drinks & snacks included)
-              </li>*/}
+                Price: €49 (drinks & snacks included)
+              </li>
             </ul>
           </div>
 
           {/* RIGHT – IMAGE */}
           <div className="w-full h-80 md:h-full bg-gray-300 rounded-xl overflow-hidden shadow-lg">
             <img
-              src="/images/QA_160126.png" // Update with your image path
-              alt="AI Workshop"
+              src="/images/Ditch the Nerves.png" // Update with your image path
+              alt="Power of Public Speaking Workshop"
               className="w-full h-full object-cover"
             />
           </div>
@@ -79,6 +78,7 @@ for AI-Based Apps</span>
 
           {/* LEFT COLUMN — EVENT CARDS */}
           <div className="md:col-span-2 space-y-10">
+            <h2 className="text-3xl font-bold mb-10">Past Events</h2>
             <div className="grid sm:grid-cols-2 gap-10">
               {events.map((event, index) => (
                 <Link to={event.link} key={index}>

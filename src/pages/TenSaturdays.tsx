@@ -207,7 +207,7 @@ const experts = [
             </section>
 
       {/* Checklist */}
-      <section className="bg-gray-50 px-20 py-20 relative">
+      <section className="bg-gray-50 px-4 py-20 relative">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             What you’ll get out of this program
@@ -327,7 +327,7 @@ const experts = [
       </section>
 
       {/* Testimonials */}
-      <section className="bg-gray-50 px-40 py-20 relative" style={{ alignItems: 'center' }}>
+      <section className="bg-gray-50 px-4 py-20 relative" style={{ alignItems: 'center' }}>
         <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                     What <span className="text-orange-600"> participants say</span>
@@ -360,6 +360,7 @@ const experts = [
           ].map((t, i) => (
             <Card key={i} className="h-full">
               <CardContent className="pt-6">
+              
                 <img
                   src={t.img}
                   className="w-20 h-20 rounded-full mx-auto mb-4 border-1 border-white shadow-md object-cover"
@@ -371,7 +372,7 @@ const experts = [
           ))}
         </div>
       </section>
-
+  
       {/* Experts Grid */}
             <section className="mx-auto max-w-6xl px-4 py-16">
               <div className="text-center mb-16">

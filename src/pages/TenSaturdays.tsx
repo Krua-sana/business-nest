@@ -207,7 +207,7 @@ const experts = [
             </section>
 
       {/* Checklist */}
-      <section className="bg-gray-50 px-40 py-20 relative">
+      <section className="bg-gray-50 px-4 py-20 relative">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             What you’ll get out of this program

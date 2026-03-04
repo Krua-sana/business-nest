@@ -12,8 +12,8 @@ import ApplicationForm from "./pages/ApplicationForm";
 import Events from "./pages/Events";
 import QualityAssuranceWorkshop from "./pages/events/QualityAssuranceWorkshop";
 import AICoCreatorWorkshop from "./pages/events/AICoCreatorWorkshop";
-
-
+import CreateYourOnlinePresence from "./pages/events/Create-your-online-presence";
+import FinancialTransitionLab from "./pages/events/Financial-transition-lab";
 
 
 const queryClient = new QueryClient();
@@ -36,6 +36,8 @@ const App = () => (
           <Route path="/events" element={<Events />} />
           <Route path="/events/quality-assurance-ai" element={<QualityAssuranceWorkshop />}/>
           <Route path="/events/ai-co-creator" element={<AICoCreatorWorkshop />}/>
+          <Route path="/events/create-your-online-presence" element={<CreateYourOnlinePresence />}/>
+          <Route path="/events/financial-transition-lab" element={<FinancialTransitionLab />}/>
 
 
 

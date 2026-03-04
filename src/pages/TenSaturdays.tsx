@@ -67,42 +67,42 @@ export default function TenSaturdays() {
       title: "Saturday 1: Problem discovery and Idea Generation", 
       subtitle: "Identify real-world problems worth solving", 
       topics: ["How to look up for problems and ideas", "How to check if there is a market for your idea", "Business Model Canvas to structure your process", "AI as a co-creator, practical prompting"], 
-      month: "MAR", day: "7"
+      month: "APR", day: "11"
     },
     { title: "Saturday 2: Customer Discovery", subtitle: "Know your customer", 
       topics: ["How to choose and build a customer profile", "Jobs to be Done framework", "How to test the concept with a relevant audience", "Interview exercises"], 
-      month: "MAR", day: "14"
+      month: "APR", day: "18"
     },
     { title: "Saturday 3: Prototyping & MVP, Usability Testing", subtitle: "Create a tangible product to test", 
       topics: ["How to build your product sample: digital or physical", "MVP or Prototype?", "How to create prototypes with AI tools", "How to publish your digital product online", "Usability testing basics"], 
-      month: "MAR", day: "21"
+      month: "MAY", day: "09"
     },
     { title: "Saturday 4: Business Model, Legal & businesses environment in NL", subtitle: "Secure your idea", 
       topics: ["Legal & Bureaucratic “Must-Knows", "VAT & taxation basics", "Permits & sector-specific licenses (food, health, fintech, etc.)", "NL Business and cultural landscape"], 
-      month: "MAR", day: "28"
+      month: "MAY", day: "16"
     },
     { title: "Saturday 5: Business as a lifestyle", subtitle: "Align your strengths and passions with your business idea", 
       topics: ["Business and exit strategies", "Decision making framework", "Stress management"], 
-      month: "APR", day: "4"
+      month: "MAY", day: "23"
     },
     { title: "Saturday 6: Mid-way pitch, Revenue model", subtitle: "Learn how to structure your business for sustainable income and scalability", 
       topics: ["Who pays you?", "For what exactly customers pays you?", "How do they pay (once, recurring, indirect)?", "How much should be charged and why?"], 
-      month: "APR", day: "11"
+      month: "MAY", day: "30"
     },
     { title: "Saturday 7: Marketing & Branding, Sales, Acquisition Strategies", subtitle: "Craft a brand identity and strategy that connects with your target audience", 
       topics: ["Basics of brand building & communication", "Sales: mindset and basics"], 
-      month: "APR", day: "18"
+      month: "JUN", day: "06"
     },
     { title: "Saturday 8: Financial Planning, Funding Options, Roadmap", subtitle: "Understand startup finances, explore funding opportunities, and map your business journey", 
       topics: ["How to calculate costs to start the business", "Where to look for investments", "Roadmap planning (short / long-term)"], 
-      month: "APR", day: "25"
+      month: "JUN", day: "13"
     },
     { title: "Saturday 9: Pitch Deck Development & Storytelling", subtitle: "Build a compelling pitch deck and learn how to tell your startup story", 
       topics: ["Storytelling", "How to find your voice and deliver the message", "Preparation of the pitch deck or presentation", "Tips about different types of investors and what they pay attention to", "How to present yourself and act in the process"],
-      month: "MAY", day: "02"
+      month: "JUN", day: "20"
     },
     { title: "Saturday 10: Pitching day!", subtitle: "Present your progress", topics: ["Final presentations", "Receive the feedback and recommendations", "Next steps & alumni benefits", "Celebrate with us!"], 
-      month: "MAY", day: "09"
+      month: "JUN", day: "27"
     },
   ];
   
@@ -207,7 +207,7 @@ const experts = [
             </section>
 
       {/* Checklist */}
-      <section className="bg-gray-50 px-4 py-20 relative">
+      <section className="bg-gray-50 px-40 py-20 relative">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             What you’ll get out of this program
@@ -294,37 +294,114 @@ const experts = [
           </p>
         </div>
         
-        <div className="mt-8 grid md:grid-cols-1 gap-6">
+        <div className="mt-8 grid md:grid-cols-1 gap-6 px-60">
       
           <Card className="border-primary/30">
             <CardHeader>
-              <CardTitle className="text-4xl font-bold">Flight Path</CardTitle>
+              <CardTitle className="text-4xl font-bold"><span className="text-orange-600">Flight Path</span></CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              <div className="text-2xl">Start at 21 March 2026</div>
+              <div className="text-2xl">Apply till 21 March 2026</div>
               <div className="text-xl text-gray-600 text-muted-foreground">Tailored for tech professionals and specialists in transition — whether after a layoff or alongside your current job.</div>
-              <ul className="mt-4 mb-4 space-y-2 text-sm">
+              <ul className="mt-4 mb-4 space-y-4 text-xl">
                 <li className="flex items-center gap-3"><Users /> Program in english</li>
-                <li className="flex items-center gap-3"><Award /> Special price €967 (excl.VAT)</li>
+                <li className="flex items-center gap-3"><Award /> Special price €2,500 (excl.VAT)</li>
                 <li className="flex items-center gap-3"><Calendar /> 10 Saturdays • 10–15 participants</li>
                 <li className="flex items-center gap-3"><MessageSquare /> Experts consultancy (Saturdays & open hours)</li>
                 <li className="flex items-center gap-3"><FileText /> Digital & printed materials</li>
                 <li className="flex items-center gap-3"><BookOpen /> Private community group</li>
-                <li className="flex items-center gap-3"><Coffee /> Drinks and snacks during 9 sessions day</li>
+                <li className="flex items-center gap-3"><Coffee /> Lunch, drinks and snacks during 9 sessions day</li>
                 <li className="flex items-center gap-3"><PartyPopper /> Drinks on the Pitch day</li>
               </ul>
+              <br/>
               <Button size="lg"
                             onClick={() => window.location.href = 'https://forms.gle/3wNJf2ChEezUZYnFA'}
                             className="mt-4 w-full">Application Form</Button>
+              <Button size="lg" variant="outline"
+                            onClick={() => window.location.href = 'https://www.cal.eu/business-nest/30min?month=2026-04&date=2026-04-06'}
+                            className="mt-4 w-full">Book a call to know more</Button>
               
-              {/* <a href="https://forms.gle/kqNpAbwZvFrQK25n9" target="_blank" rel="noopener noreferrer" className="mt-4 inline-block">
-                      <Button variant="outline" size="lg">Learn more</Button>
-               </a> */}
             </CardContent>
           </Card>
       
         </div>
       </section>
+
+       {/* Course Syllabus */}
+        <section className="bg-gradient-to-b from-orange-50 to-amber-50 py-20 px-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                      Program syllabus
+                    </h2>
+                    <p className="text-gray-600">
+                    10 live offline Saturday sessions • 9 lessons • 8 hours each
+                  </p>
+                  </div>
+              <div className="flex justify-between items-center mb-8">
+                
+                <button
+                  onClick={() => setShowAll(!showAll)}
+                  className="text-sm font-medium text-blue-600 hover:underline"
+                >
+                  {showAll ? "Collapse all modules" : "Expand all modules"}
+                </button>
+              </div>
+      
+          <div className="space-y-4">
+            {visibleModules.map((mod, i) => (
+              <div
+                key={i}
+                className="border rounded-lg overflow-hidden shadow-sm bg-white"
+              >
+                {/* Accordion Header */}
+                <button
+                  className="w-full flex items-center justify-between px-6 py-4 text-left font-semibold hover:bg-gray-100"
+                  onClick={() => toggleModule(i)}
+                >
+                  <div className="flex items-center gap-4">
+                    {/* 📅 Date Badge */}
+                    <div className="w-14 h-14 rounded-lg border bg-white flex flex-col items-center justify-center shadow-sm">
+                      <span className="text-xs uppercase text-gray-500 font-medium leading-none">
+                        {mod.month}
+                      </span>
+                      <span className="text-xl font-bold text-gray-800 leading-none">
+                        {mod.day}
+                      </span>
+                    </div>
+      
+                    {/* Title + Subtitle */}
+                    <div>
+                      <div className="text-lg font-semibold">{mod.title}</div>
+                      <div className="text-sm text-gray-500">{mod.subtitle}</div>
+                    </div>
+                  </div>
+      
+                  {expanded === i ? (
+                    <ChevronUp className="text-gray-400" />
+                  ) : (
+                    <ChevronDown className="text-gray-400" />
+                  )}
+                </button>
+      
+                {/* Accordion Body */}
+                {expanded === i && (
+                  <div className="px-8 pb-4 text-gray-700">
+                    <ul className="list-disc pl-6 space-y-1">
+                      {mod.topics.map((topic, j) => (
+                        <li key={j}>{topic}</li>
+                      ))}
+                    </ul>
+                    <p className="mt-3 text-sm text-gray-500">Lunch included 🍽️</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      
 
       {/* Testimonials */}
       <section className="bg-gray-50 px-4 py-20 relative" style={{ alignItems: 'center' }}>

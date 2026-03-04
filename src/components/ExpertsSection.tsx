@@ -59,9 +59,6 @@ const ExpertsSection = () => {
 
   return (
     <section id="experts" className="py-20 bg-gradient-to-b from-orange-50 to-amber-50 relative">
-      {/* Decorative Elements
-      <div className="absolute top-20 right-20 text-5xl opacity-20 animate-float">🪺</div>
-      <div className="absolute bottom-20 left-20 text-5xl opacity-20 animate-float-delayed">🐦</div>*/}
 
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">

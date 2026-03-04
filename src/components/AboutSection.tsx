@@ -38,7 +38,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-amber-50 to-orange-100 relative">
+    <section id="about" className="py-20 bg-white from-amber-50 to-orange-100 relative">
       {/* Decorative Elements
       <div className="absolute top-20 left-10 text-6xl opacity-20 animate-float">🐦</div>
       <div className="absolute bottom-20 right-10 text-6xl opacity-20 animate-float-delayed">🪺</div>

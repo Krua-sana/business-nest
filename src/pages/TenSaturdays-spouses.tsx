@@ -288,24 +288,24 @@ const experts = [
 
       {/* Course Syllabus */}
       <section className="bg-gray-50 py-16 px-6">
-  <div className="max-w-6xl mx-auto">
-    <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Program syllabus
-          </h2>
-          <p className="text-gray-600">
-          10 live offline Saturday sessions • 9 lessons • 8 hours each
-        </p>
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                Program syllabus
+              </h2>
+              <p className="text-gray-600">
+              10 live offline Saturday sessions • 9 lessons • 8 hours each
+            </p>
+            </div>
+        <div className="flex justify-between items-center mb-8">
+          
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="text-sm font-medium text-blue-600 hover:underline"
+          >
+            {showAll ? "Collapse all modules" : "Expand all modules"}
+          </button>
         </div>
-    <div className="flex justify-between items-center mb-8">
-      
-      <button
-        onClick={() => setShowAll(!showAll)}
-        className="text-sm font-medium text-blue-600 hover:underline"
-      >
-        {showAll ? "Collapse all modules" : "Expand all modules"}
-      </button>
-    </div>
 
     <div className="space-y-4">
       {visibleModules.map((mod, i) => (

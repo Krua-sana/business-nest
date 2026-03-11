@@ -318,7 +318,7 @@ const experts = [
                             onClick={() => window.location.href = 'https://forms.gle/3wNJf2ChEezUZYnFA'}
                             className="mt-4 w-full">Application Form</Button>
               <Button size="lg" variant="outline"
-                            onClick={() => window.location.href = 'https://www.cal.eu/business-nest/30min?month=2026-04&date=2026-04-06'}
+                            onClick={() => window.location.href = 'https://cal.com/business-nest-n0ftmi/10-saturdays-program-intake'}
                             className="mt-4 w-full">Book a call to know more</Button>
               
             </CardContent>

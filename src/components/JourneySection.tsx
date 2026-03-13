@@ -52,13 +52,13 @@ const JourneySection = () => {
       target: "_blank",
       cta: "Meet Experts"
     },
-    {
+    /*{
       name: "Get your own nest",
       features: ["Desk at co-working space", "Coffee & Tea", "Business mailbox", "24/7 access"],
       href: "https://www.strijpcs.nl/en/free-trial/", // external (replace later)
       target: "_blank",
       cta: "Join a Free Day"
-    }
+    }*/
   ];
 
   return (
@@ -86,7 +86,7 @@ const JourneySection = () => {
 
         {/* Plans */}
         <div className="mb-16">
-          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {plans.map((plan, index) => {
               const destination = plan.to || plan.href || '';
               const btnClasses = `w-full mt-6 ${

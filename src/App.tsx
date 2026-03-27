@@ -14,6 +14,7 @@ import QualityAssuranceWorkshop from "./pages/events/QualityAssuranceWorkshop";
 import AICoCreatorWorkshop from "./pages/events/AICoCreatorWorkshop";
 import CreateYourOnlinePresence from "./pages/events/Create-your-online-presence";
 import FinancialTransitionLab from "./pages/events/Financial-transition-lab";
+import AssessmentWizard from "./features/radar/pages/AssessmentWizard";
 
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/events/ai-co-creator" element={<AICoCreatorWorkshop />}/>
           <Route path="/events/create-your-online-presence" element={<CreateYourOnlinePresence />}/>
           <Route path="/events/financial-transition-lab" element={<FinancialTransitionLab />}/>
+          <Route path="/radar" element={<AssessmentWizard />} />
 
 
 

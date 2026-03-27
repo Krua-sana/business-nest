@@ -4,6 +4,8 @@ import type { Config } from "tailwindcss";
 export default {
 	darkMode: ["class"],
 	content: [
+		"./index.html",
+  		"./src/**/*.{ts,tsx}",
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
@@ -19,6 +21,7 @@ export default {
 			}
 		},
 		extend: {
+			
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -42,8 +45,9 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					DEFAULT: "hsl(var(--accent) / <alpha-value>)",
+					foreground: "hsl(var(--accent-foreground) / <alpha-value>)",
+					border: "var(--accent-border)",
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',

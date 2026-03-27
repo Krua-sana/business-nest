@@ -18,8 +18,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /*--primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;*/
+
+    --primary: 240 83% 55%; /* #2F2FEA Nest Blue */
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -27,8 +30,10 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /*--accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;*/
+    --accent: 25 74% 54%; /* Darkened Nest Orange for better contrast (ratio > 4.5:1) */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -38,6 +43,11 @@ All colors MUST be HSL.
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+     /* Custom Brand Additions */
+    --brand-blue: 240 83% 55%; /* #2F2FEA */
+    --brand-orange: 30 68% 54%; /* #D88A3D */
+    --brand-sand: 47 67% 66%; /* #E2C86E */
 
     --sidebar-background: 0 0% 98%;
 
@@ -54,6 +64,15 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+   body {
+    @apply bg-background text-foreground antialiased min-h-screen selection:bg-primary/30 selection:text-primary-foreground;
+    font-family: var(--font-sans);
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(47, 47, 234, 0.04), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(216, 138, 61, 0.03), transparent 25%);
+    background-attachment: fixed;
   }
 
   .bg-blue {background-color: #2F2FEA;}
@@ -105,6 +124,26 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl shadow-black/5;
+  }
+  
+  .glass-input {
+    @apply bg-white/50 border border-black/10 text-black placeholder:text-black/30 
+           focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50
+           transition-all duration-300 rounded-xl px-4 py-3 w-full;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-black via-black/90 to-black/70;
+  }
+  
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--brand-blue))] to-[hsl(var(--brand-orange))];
   }
 }
 
@@ -169,4 +208,12 @@ html {
 
 .animate-float-delayed {
   animation: float-delayed 6s ease-in-out infinite 2s;
+}
+
+.result-validate {
+  background:#EFD0B1;
+}
+
+.readiness-score {
+  background:  #2F2FEA;
 }

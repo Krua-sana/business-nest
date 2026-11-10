@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>AI as Co-Creator — Host</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="vendor/qrcode.js"></script>
+</head>
+<body class="host">
+  <div id="demo-flag" class="demo-flag" hidden>DEMO MODE: open the player page in other tabs of this browser to test</div>
+  <div class="offline-flag">Reconnecting…</div>
+
+  <div id="pin-gate" class="pin-gate" hidden>
+    <form id="pin-form" class="card">
+      <h2>Host screen</h2>
+      <p class="muted">Enter your host PIN and the workshop code participants will use.</p>
+      <input id="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="Host PIN" required>
+      <input id="host-code" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Workshop code (for participants)" required>
+      <button class="btn primary block" type="submit">Open dashboard</button>
+      <div class="err" id="pin-err"></div>
+    </form>
+  </div>
+
+  <div id="app" hidden>
+    <header class="host-top">
+      <div class="brand"><div class="t1">AI as Co-Creator</div><div class="t2">From Idea to Prototype</div></div>
+      <div id="pipeline"></div>
+      <div id="timer" class="timer"></div>
+    </header>
+    <section id="banner" class="banner"></section>
+    <main id="main"></main>
+    <footer id="controls" class="controls"></footer>
+  </div>
+  <div id="modal" class="modal"></div>
+  <script src="js/config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/host.js"></script>
+</body>
+</html>

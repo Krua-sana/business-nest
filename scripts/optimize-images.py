@@ -7,9 +7,12 @@ Add a line to JOBS when you add a new big photo.
 from pathlib import Path
 from PIL import Image, ImageOps
 
-PUBLIC = Path(__file__).resolve().parent.parent / "public"
+ROOT = Path(__file__).resolve().parent.parent
+PUBLIC = ROOT / "public"
+# Big originals live in image-sources/ (not published); older ones may still be in public/.
+SOURCES = [ROOT / "image-sources", PUBLIC]
 
-# (source inside public/, output inside public/images/web/, max width)
+# (source inside image-sources/ or public/, output inside public/images/web/, max width)
 JOBS = [
     ("images/March workshop Layoff to Income Strategy.png", "financial-lab-poster.jpg", 1200),
     ("images/AI as Co-Creator-cover.png", "ai-co-creator-poster.jpg", 1200),
@@ -28,7 +31,7 @@ JOBS = [
 
 def main() -> None:
     for src, out, width in JOBS:
-        src_path = PUBLIC / src
+        src_path = next((d / src for d in SOURCES if (d / src).exists()), PUBLIC / src)
         out_path = PUBLIC / "images" / "web" / out
         if not src_path.exists():
             print(f"skip (missing): {src}")

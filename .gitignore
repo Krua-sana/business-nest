@@ -6,3 +6,6 @@ dist
 .DS_Store
 .vscode/*
 !.vscode/extensions.json
+
+# Original/unused images (kept locally, not published)
+image-sources/

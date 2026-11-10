@@ -243,7 +243,7 @@ export default function Program() {
           <p className="m-0 max-w-[540px] text-lg leading-relaxed text-slate">A practical program for tech professionals and specialists in transition — whether after a layoff or alongside your current job. Transform your domain knowledge into a validated business, with structure, mentorship and a community behind you.</p>
           <dl className="m-0 grid w-full max-w-[500px] grid-cols-2 gap-x-8 gap-y-3">
             {[[START_DATE, "next programme starts"], ["10 Saturdays", "until the final pitch on 15 May"], ["10–15 founders", "small cohort"], APPLICATIONS_CLOSE ? [APPLICATIONS_CLOSE, "applications close"] : [EARLY_BIRD_PRICE, "early bird price, excl. VAT"]].map(([v, l]) => (
-              <div key={l} className="flex flex-col-reverse">
+              <div key={l} className="flex flex-col-reverse justify-end">
                 <dt className="text-sm text-stone">{l}</dt>
                 <dd className="m-0 text-lg font-bold">{v}</dd>
               </div>
@@ -322,7 +322,7 @@ export default function Program() {
           <SectionHead light eyebrow="The program in numbers" title="One cohort, ten Saturdays" id="kpi-title" />
           <dl className="m-0 grid gap-5 md:grid-cols-3">
             {[["15", "experts sharing their knowledge", "#F26A1B"], ["58", "hours of hands-on work", "#D4F57A"], ["119", "cups of coffee", "#FFFFFF"]].map(([v, l, egg]) => (
-              <div key={l} className="flex flex-col-reverse gap-2 rounded-card border border-white/25 bg-white/[.08] p-7">
+              <div key={l} className="flex flex-col-reverse justify-end gap-2 rounded-card border border-white/25 bg-white/[.08] p-7">
                 <dt className="text-[17px] leading-snug text-sky-tint">{l}</dt>
                 <dd className="m-0 flex items-center gap-3.5 font-display text-[60px] font-extrabold leading-none tracking-tightest text-yolk md:text-[72px]">
                   {v}

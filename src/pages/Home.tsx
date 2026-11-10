@@ -100,7 +100,7 @@ export default function Home() {
           </div>
           <dl className="m-0 grid w-full max-w-[560px] grid-cols-2 gap-x-6 gap-y-5 border-t border-sand-dark pt-5 sm:grid-cols-3">
             {[["500+", "entrepreneurs in the community"], ["4", "businesses launched"], ["2024", "nesting in Eindhoven since"]].map(([v, l]) => (
-              <div key={l} className="flex flex-col-reverse gap-0.5">
+              <div key={l} className="flex flex-col-reverse justify-end gap-0.5">
                 <dt className="text-sm text-stone">{l}</dt>
                 <dd className="m-0 font-display text-[30px] font-extrabold">{v}</dd>
               </div>
@@ -277,7 +277,7 @@ export default function Home() {
             <h3 className="font-display text-[28px] font-bold">Our impact so far</h3>
             <dl className="m-0 grid grid-cols-2 gap-6 lg:grid-cols-4">
               {[["2", "years of impact"], ["500+", "entrepreneurs in the community"], ["4", "businesses launched"], ["95%", "success rate"]].map(([v, l]) => (
-                <div key={l} className="flex flex-col-reverse gap-1">
+                <div key={l} className="flex flex-col-reverse justify-end gap-1">
                   <dt className="text-base text-sky-tint">{l}</dt>
                   <dd className="m-0 font-display text-[44px] font-extrabold text-yolk md:text-[56px]">{v}</dd>
                 </div>

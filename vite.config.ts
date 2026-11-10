@@ -20,6 +20,7 @@ export default defineConfig({
         "/experts",
         "/gallery",
       ],
+      exclude: ["/play/ai-co-creator", "/play/ai-co-creator/host"], // workshop game stays out of Google
     }),
   ],
   base: "/",

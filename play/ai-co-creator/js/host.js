@@ -1,6 +1,7 @@
 const $ = s => document.querySelector(s);
 let store, game = { state: { phase: "lobby" } };
 let prevSig = {}, lastPhase = null;
+let feedback = {};
 
 let joinCode = localStorage.getItem("aicc-host-code") || "";
 const joinUrl = (withCode = true) => {
@@ -45,6 +46,7 @@ function qrSVG(text) {
 function start() {
   $("#app").hidden = false;
   store.onConnection(ok => document.body.classList.toggle("offline", !ok));
+  store.subscribeFeedback(f => { feedback = f || {}; if (game.state.phase === "feedback") render(); });
   store.subscribe(g => { game = g || { state: { phase: "lobby" } }; game.state = game.state || { phase: "lobby" }; render(); });
   setInterval(tick, 250);
   document.addEventListener("keydown", e => {
@@ -90,13 +92,59 @@ function onControl(e) {
       const base = Math.max(now, st.endsAt || now);
       return store.update("state", { endsAt: d > 0 ? base + d : Math.max(now, (st.endsAt || now) + d), duration: dur });
     }
-    case "reset":
-      if (confirm("Start a NEW game? This deletes all teams, answers and votes.")) {
-        prevSig = {}; return store.set("", { state: { phase: "lobby" } });
-      }
-      return;
+    case "reset": return newGame();
     case "hide": return document.body.classList.add("hide-controls");
   }
+}
+
+// Unique phones that are a member of at least one team
+function participantCount() {
+  const ids = new Set();
+  Object.values(game.teams || {}).forEach(t => Object.keys(t.members || {}).forEach(u => ids.add(u)));
+  return ids.size;
+}
+function participantsLine() {
+  const p = participantCount(), t = Object.keys(game.teams || {}).length;
+  return `<div class="participants-line">👥 <b>${p}</b> participant${p === 1 ? "" : "s"} in <b>${t}</b> team${t === 1 ? "" : "s"}</div>`;
+}
+
+async function newGame() {
+  const hasData = Object.keys(game.teams || {}).length > 0 || Object.keys(feedback || {}).length > 0;
+  const msg = hasData
+    ? "Start a NEW game?\n\nThe current teams, answers, votes and feedback are saved to the archive in Firebase first, then the screen is cleared."
+    : "Start a NEW game?";
+  if (!confirm(msg)) return;
+  if (hasData) {
+    const d = new Date(store.now());
+    const pad = n => String(n).padStart(2, "0");
+    const key = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}_${pad(d.getHours())}-${pad(d.getMinutes())}-${pad(d.getSeconds())}`;
+    try {
+      await store.archive(key, {
+        savedAt: store.now(),
+        summary: (() => {
+          const fb = Object.values(feedback || {}).filter(f => f && f.stars);
+          return {
+            participants: participantCount(),
+            teams: Object.keys(game.teams || {}).length,
+            votesCast: Object.keys(game.votes || {}).length,
+            feedbackResponses: fb.length,
+            averageRating: fb.length ? Math.round(fb.reduce((a, f) => a + f.stars, 0) / fb.length * 10) / 10 : null
+          };
+        })(),
+        teams: game.teams || null,
+        votes: game.votes || null,
+        feedback: Object.keys(feedback || {}).length ? feedback : null,
+        lastPhase: game.state?.phase || null
+      });
+    } catch (e) {
+      alert("Couldn't save the archive, so nothing was deleted.\n\n" + e.message);
+      return;
+    }
+    toast("Saved to archive: " + key);
+  }
+  prevSig = {};
+  try { await store.clearFeedback(); } catch (e) { console.error(e); }
+  return store.set("", { state: { phase: "lobby" } });
 }
 
 // ---------------- rendering ----------------
@@ -114,7 +162,7 @@ function render() {
 
   // banner
   const s = stepOf(phase), idx = phaseIdx(phase);
-  const stats = `<b>${teams.length}</b> teams · <b>${players}</b> players`;
+  const stats = TEAM_JOINING ? `<b>${teams.length}</b> teams · <b>${players}</b> players` : `<b>${teams.length}</b> teams`;
   if (s) {
     const votes = Object.keys(game.votes || {}).length;
     $("#banner").innerHTML = `
@@ -133,6 +181,7 @@ function render() {
   // main
   if (phase === "lobby") renderLobby(teams, players);
   else if (phase === "results") renderResults();
+  else if (phase === "feedback") renderFeedback();
   else renderGrid(teams);
 
   renderControls();
@@ -148,12 +197,12 @@ function renderLobby(teams, players) {
         <div class="big-qr">${qrSVG(joinUrl())}</div>
         <div class="url big">${joinText()}</div>
         <div class="code-line">Workshop code: <b class="code-pill big">${esc(joinCode)}</b></div>
-        <p class="hint">One team = 2–3 people. Create your team, teammates join it.</p>
+        <p class="hint">${TEAM_JOINING ? "One team = 2–3 people. Create your team, teammates join it." : "One phone per team: one person creates the team and enters the answers."}</p>
         ${store.demo ? `<p class="demo-note">⚠️ Demo mode: phones can't join yet. ${location.protocol === "file:" ? "This page is opened from your computer — open the GitHub Pages link instead." : "Connect Firebase in js/config.js (see README)."}</p>` : ""}
       </div>
       <div class="lobby-teams">
-        <h2>${teams.length} teams · ${players} players</h2>
-        <ul class="team-chips">${teams.map(t => `<li class="pop">${esc(t.name)} <small>👥 ${t.memberCount}</small></li>`).join("") || '<li class="empty">Waiting for the first team…</li>'}</ul>
+        <h2>${teams.length} teams${TEAM_JOINING ? ` · ${players} players` : ""}</h2>
+        <ul class="team-chips">${teams.map(t => `<li class="pop">${esc(t.name)}${TEAM_JOINING ? ` <small>👥 ${t.memberCount}</small>` : ""}</li>`).join("") || '<li class="empty">Waiting for the first team…</li>'}</ul>
       </div>
     </div>`;
 }
@@ -181,6 +230,7 @@ function renderResults() {
   $("#main").innerHTML = `
     <div class="results">
       <div class="winner-box">
+        ${participantsLine()}
         <div class="kicker">${winners.length > 1 ? "It's a tie! Winners" : "And the winner is…"}</div>
         ${winners.length ? winners.map(w => `
           <div class="winner">
@@ -202,6 +252,29 @@ function renderResults() {
   if (lastPhase !== "results" && winners.length) confetti();
 }
 
+function renderFeedback() {
+  const list = Object.values(feedback || {}).filter(f => f && f.stars);
+  const n = list.length;
+  const avg = n ? list.reduce((a, f) => a + f.stars, 0) / n : 0;
+  const dist = [5, 4, 3, 2, 1].map(s => [s, list.filter(f => f.stars === s).length]);
+  const max = Math.max(1, ...dist.map(d => d[1]));
+  $("#main").innerHTML = `
+    <div class="feedback-host">
+      <div class="fb-ask">
+        <div class="tagline">One last thing</div>
+        <h1>${esc(FEEDBACK.question)}</h1>
+        <p>Give your stars on your phone and leave a short message.<br><b>It's anonymous.</b> Only the organiser reads the messages.</p>
+        <div class="mini-qr fb-qr">${qrSVG(joinUrl())}</div>
+      </div>
+      <div class="fb-stats">
+        <div class="fb-avg">${n ? avg.toFixed(1) : "–"}</div>
+        ${starsHTML(avg, "big")}
+        <div class="fb-count">${n} of ${participantCount()} participant${participantCount() === 1 ? "" : "s"} responded</div>
+        <ul class="fb-dist">${dist.map(([s, c]) => `<li><span>${s} ★</span><span class="bar"><span style="width:${(c / max) * 100}%"></span></span><b>${c}</b></li>`).join("")}</ul>
+      </div>
+    </div>`;
+}
+
 function renderControls() {
   const st = game.state, phase = st.phase, i = PHASES.indexOf(phase);
   const next = PHASES[i + 1];
@@ -210,7 +283,10 @@ function renderControls() {
   if (phase === "lobby") {
     html = `<button class="btn primary xl" data-act="start">▶ Start the game</button>`;
   } else if (phase === "results") {
-    html = `<button class="btn" data-act="back">◀ Back to voting</button>`;
+    html = `<button class="btn" data-act="back">◀ Back to voting</button>
+      <button class="btn primary" data-act="next">💬 Ask for feedback ▶</button>`;
+  } else if (phase === "feedback") {
+    html = `<button class="btn" data-act="back">◀ Back to results</button>`;
   } else {
     html = `<button class="btn" data-act="back">◀ Back</button>
       <button class="btn" data-act="minus">−1 min</button>
@@ -230,7 +306,7 @@ function openModal(id) {
   const link = safeUrl(t.link);
   $("#modal").innerHTML = `<div class="modal-box">
     <button class="close" data-close aria-label="Close">×</button>
-    <div class="kicker">👥 ${t.memberCount} members</div>
+    ${TEAM_JOINING ? `<div class="kicker">👥 ${t.memberCount} members</div>` : ""}
     <h1>${esc(t.name)}</h1>
     <div class="domain">${esc((domainOf(t.domain)?.emoji || "") + " " + (t.domain || "No problem area yet"))}</div>
     <h3>Challenge</h3><p>${esc(t.challenge || "—")}</p>

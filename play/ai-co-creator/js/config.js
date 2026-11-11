@@ -24,6 +24,15 @@ const DEMO_PIN = "1234";
 // In live mode the code is the one you write into the Firebase rules (CHANGE_ME_CODE).
 const DEMO_CODE = "NEST";
 
+// true = teammates can join a team from their own phone
+const TEAM_JOINING = true;
+
+// Feedback round at the end (after the winner is revealed)
+const FEEDBACK = {
+  question: "How did you experience today's workshop?",
+  commentLabel: "What did you like, and what could be better? (optional)"
+};
+
 const WORKSHOP = {
   title: "AI as Co-Creator",
   subtitle: "From Idea to Prototype",

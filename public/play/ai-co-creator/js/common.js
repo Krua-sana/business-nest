@@ -1,9 +1,9 @@
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-const PHASES = ["lobby", ...STEPS.map(s => s.id), "results"];
+const PHASES = ["lobby", ...STEPS.map(s => s.id), "results", "feedback"];
 const stepOf = phase => STEPS.find(s => s.id === phase);
-const phaseIdx = phase => phase === "results" ? STEPS.length : STEPS.findIndex(s => s.id === phase);
+const phaseIdx = phase => phase === "results" || phase === "feedback" ? STEPS.length : STEPS.findIndex(s => s.id === phase);
 const domainOf = label => DOMAINS.find(d => d.label === label);
 
 function remaining(state, now) {
@@ -65,7 +65,7 @@ function teamCardHTML(t, { clickable = false, votes = null } = {}) {
   const link = safeUrl(t.link);
   const empty = s => `<span class="empty">${s}</span>`;
   return `<article class="team-card" data-id="${esc(t.id)}" ${clickable ? 'tabindex="0" role="button"' : ""}>
-    <header><h3>${esc(t.name)}</h3><span class="members" title="team members">👥 ${t.memberCount}</span>
+    <header><h3>${esc(t.name)}</h3>${TEAM_JOINING ? `<span class="members" title="team members">👥 ${t.memberCount}</span>` : ""}
       ${votes != null ? `<span class="votes">${votes} ★</span>` : ""}</header>
     <div class="domain ${t.domain ? "" : "none"}">${t.domain ? `${d ? d.emoji + " " : ""}${esc(t.domain)}` : "No problem area yet"}</div>
     <dl>
@@ -105,4 +105,8 @@ function confetti(container = document.body) {
     container.appendChild(p);
     setTimeout(() => p.remove(), 6000);
   }
+}
+
+function starsHTML(n, size = "") {
+  return `<span class="stars ${size}" aria-label="${n} of 5 stars">${[1,2,3,4,5].map(i => `<span class="${i <= Math.round(n) ? "on" : ""}">★</span>`).join("")}</span>`;
 }

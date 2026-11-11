@@ -1,6 +1,8 @@
 const $ = s => document.querySelector(s);
 let store, uid, game = { state: { phase: "lobby" } };
 let tab = "task", editing = null, screenKey = null, lastPhase = null;
+let watching = localStorage.getItem("aicc-watch") === "1";
+let fbStars = 0, fbLoaded = false, fbSaved = null;
 const drafts = {};
 
 const myTeam = () => teamsList(game).find(t => t.members && t.members[uid]);
@@ -28,7 +30,12 @@ async function ensureCode() {
     params.delete("code");
     history.replaceState(null, "", location.pathname + (params.toString() ? "?" + params : "") + location.hash);
   }
-  const tryCode = async c => { if (!c) return false; try { await store.claimPlayer(c); localStorage.setItem("aicc-code", c); return true; } catch { return false; } };
+  let lastErr = "";
+  const tryCode = async c => {
+    if (!c) return false;
+    try { await store.claimPlayer(c); localStorage.setItem("aicc-code", c); return true; }
+    catch (e) { lastErr = e.message; return false; }
+  };
   if (await tryCode(fromUrl) || await tryCode(localStorage.getItem("aicc-code"))) return;
   localStorage.removeItem("aicc-code");
   $("#root").innerHTML = `
@@ -46,7 +53,10 @@ async function ensureCode() {
     $("#code-form").addEventListener("submit", async e => {
       e.preventDefault();
       const c = $("#code").value.trim().toUpperCase();
-      if (await tryCode(c)) resolve(); else $("#code-err").textContent = "That code doesn't work. Check the big screen and try again.";
+      if (await tryCode(c)) resolve();
+      else $("#code-err").textContent = lastErr === "Wrong code"
+        ? `"${c}" doesn't work. Check the code on the big screen and try again.`
+        : `Couldn't reach the game (${lastErr}). Check your internet connection and try again.` + (store.demo ? " [demo mode]" : "");
     });
   });
   $("#root").innerHTML = "";
@@ -63,8 +73,13 @@ function render() {
   }
   lastPhase = phase;
 
-  const key = team ? `team:${team.id}:${phase}:${editing}:${tab}` : "join";
+  if (phase === "feedback") {
+    if (screenKey !== "feedback") { screenKey = "feedback"; buildFeedback(); }
+    return;
+  }
+  const key = team ? `team:${team.id}:${phase}:${editing}:${tab}` : watching ? `watch:${phase}` : "join";
   if (key !== screenKey) { screenKey = key; buildShell(team); }
+  if (!team && watching) { updateHeader(null); return updateTeams(); }
   if (!team) return updateJoin();
   updateHeader(team);
   if (tab === "task") updateTask(team); else updateTeams();
@@ -82,11 +97,23 @@ function buildShell(team) {
           <button class="btn primary block" type="submit">Create team</button>
           <div class="err" id="create-err"></div>
         </form>
-        <div class="card">
+        ${TEAM_JOINING ? `<div class="card">
           <h2>…or join your team</h2>
           <ul class="join-list" id="join-list"></ul>
-        </div>
+        </div>` : `<div class="card">
+          <h2>Your team already exists?</h2>
+          <p class="muted">Only one phone per team plays: the person who created the team enters your answers. You can follow all teams live on your phone.</p>
+          <button class="btn block" type="button" data-watch>Watch the dashboard</button>
+        </div>`}
       </div>`;
+    if (!TEAM_JOINING) $("#create-form p.muted").textContent = "One phone per team: the person who creates the team enters all your team's answers.";
+    return;
+  }
+  if (!team) { // watching only
+    $("#root").innerHTML = `
+      <header class="p-head" id="p-head"></header>
+      <div class="watch-note">👀 You're watching. Only each team's own phone can enter answers. <button class="link" data-unwatch>Create a team instead</button></div>
+      <section id="panel"><div id="teams-list" class="team-list"></div></section>`;
     return;
   }
   $("#root").innerHTML = `
@@ -107,13 +134,14 @@ function buildShell(team) {
 function updateHeader(team) {
   const phase = game.state.phase, s = stepOf(phase);
   $("#p-head").innerHTML = `
-    <div class="p-team"><span class="lbl">Team</span> <b>${esc(team.name)}</b> <small>👥 ${team.memberCount}</small></div>
+    <div class="p-team">${team ? `<span class="lbl">Team</span> <b>${esc(team.name)}</b>${TEAM_JOINING ? ` <small>👥 ${team.memberCount}</small>` : ""}` : `<b>${esc(WORKSHOP.title)}</b>`}</div>
     ${pipelineHTML(phase)}
     <div class="p-step">${s ? `Step ${phaseIdx(phase) + 1}/${STEPS.length} · <b>${esc(s.title)}</b>` : phase === "results" ? "<b>Results</b>" : "<b>Lobby</b>"}</div>
     <div id="p-timer">${timerHTML(game.state, store.now())}</div>`;
 }
 
 function updateJoin() {
+  if (!TEAM_JOINING) return;
   const teams = teamsList(game);
   $("#join-list").innerHTML = teams.length
     ? teams.map(t => `<li><span>${esc(t.name)} <small>👥 ${t.memberCount}</small></span><button class="btn small" data-join="${esc(t.id)}">Join</button></li>`).join("")
@@ -179,7 +207,7 @@ function taskShellHTML(team) {
 
 function updateTask(team) {
   const phase = game.state.phase;
-  if (phase === "lobby") { const m = $("#mates"); if (m) m.textContent = `${team.memberCount} member${team.memberCount === 1 ? "" : "s"} in your team`; return; }
+  if (phase === "lobby") { const m = $("#mates"); if (m) m.textContent = TEAM_JOINING ? `${team.memberCount} member${team.memberCount === 1 ? "" : "s"} in your team` : "You're entering the answers for your whole team. Sit together so everyone can see this screen."; return; }
   if (phase === "results") return renderResults(team);
   const s = editing ? STEPS.find(x => x.field === editing) : stepOf(phase);
 
@@ -254,11 +282,48 @@ function updateCount() {
   c.textContent = inp.maxLength > 0 ? `${inp.value.length}/${inp.maxLength}` : "";
 }
 
+// ---------------- feedback ----------------
+function buildFeedback() {
+  $("#root").innerHTML = `
+    <div class="join">
+      <div class="brand-m"><div class="t1">${esc(WORKSHOP.title)}</div><div class="t2">Thank you for playing!</div></div>
+      <form class="card" id="fb-form">
+        <h2>${esc(FEEDBACK.question)}</h2>
+        <div class="star-input" role="radiogroup" aria-label="Your rating">
+          ${[1,2,3,4,5].map(i => `<button type="button" class="star-btn" data-star="${i}" aria-label="${i} star${i > 1 ? "s" : ""}">★</button>`).join("")}
+        </div>
+        <label for="fb-comment">${esc(FEEDBACK.commentLabel)}</label>
+        <textarea id="fb-comment" rows="4" maxlength="600" placeholder="Your message…"></textarea>
+        <button class="btn primary block" type="submit">Send feedback</button>
+        <p class="muted small-note">Anonymous: only the organiser reads it.</p>
+        <div class="saved-info" id="fb-status"></div>
+      </form>
+    </div>`;
+  paintStars();
+  if (fbSaved) { fbStars = fbSaved.stars; $("#fb-comment").value = fbSaved.comment || ""; paintStars(); showFbSaved(); }
+  else if (!fbLoaded) {
+    fbLoaded = true;
+    store.getMyFeedback().then(f => {
+      if (!f || !$("#fb-form")) return;
+      fbSaved = f; fbStars = f.stars; $("#fb-comment").value = f.comment || ""; paintStars(); showFbSaved();
+    }).catch(() => {});
+  }
+}
+function paintStars() {
+  document.querySelectorAll(".star-btn").forEach(b => b.classList.toggle("on", +b.dataset.star <= fbStars));
+}
+function showFbSaved() {
+  const el = $("#fb-status"); if (el) el.innerHTML = `<span class="ok">✓ Thank you! Your feedback is sent.</span> You can still change it.`;
+}
+
 // ---------------- events ----------------
 async function onClick(e) {
   const t = e.target.closest("button, a"); if (!t) return;
   const team = myTeam();
   if (t.dataset.tab) { tab = t.dataset.tab; render(); return; }
+  if (t.dataset.star) { fbStars = +t.dataset.star; paintStars(); return; }
+  if (t.hasAttribute("data-watch")) { watching = true; localStorage.setItem("aicc-watch", "1"); render(); return; }
+  if (t.hasAttribute("data-unwatch")) { watching = false; localStorage.removeItem("aicc-watch"); render(); return; }
   if (t.dataset.join) {
     await store.set(`teams/${t.dataset.join}/members/${uid}`, true);
     toast("Welcome to the team!"); return;
@@ -298,6 +363,15 @@ async function onSubmit(e) {
     const id = store.newId();
     try { await store.set(`teams/${id}`, { name, createdAt: store.now(), members: { [uid]: true } }); }
     catch (err) { $("#create-err").textContent = "Couldn't create team: " + err.message; }
+    return;
+  }
+  if (e.target.id === "fb-form") {
+    if (!fbStars) { toast("Tap the stars to give a rating first"); return; }
+    const data = { stars: fbStars, at: store.now() };
+    const comment = $("#fb-comment").value.trim();
+    if (comment) data.comment = comment;
+    try { await store.setMyFeedback(data); fbSaved = data; showFbSaved(); toast("Thank you for your feedback!"); }
+    catch (err) { toast("Couldn't send: " + err.message); }
     return;
   }
   if (e.target.id === "field-form") {
